@@ -8,9 +8,7 @@
 ## 프로그램 설치 및 환경 설정
 1. CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 라이브러를 설치해줘야 한다.
 
-우선 anaconda prompt 프로그램을 실행시켜야 한다.
-
-우선 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
+anaconda prompt 프로그램을 실행시켜준 후, 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
 ~~~
 conda update -n base -c defaults conda
 ~~~
@@ -18,7 +16,7 @@ conda update -n base -c defaults conda
 
 <img width="797" height="105" alt="image" src="https://github.com/user-attachments/assets/de7767a5-6b5d-40f2-a602-6fe312ed18f5" />
 
-과 같이 뜬다면, 
+와 같이 뜬다면, 
 
 ~~~
 conda update conda --all
