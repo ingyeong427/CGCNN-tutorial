@@ -36,9 +36,9 @@ conda --version
 **2. cgcnn env 만들어주기**
 
 PyTorch, scikit-learn, pymatgen를 conda 전체가 아니라 필요한 환경에만 설치하기 위해 다음과 같은 코드로 따로 환경을 구성해준다.
-
-
-
+~~~
+cgcnn이라는 conda env 생성해주는 코드 찾기
+~~~
 
 ~~~
 #PyTorch 설치
