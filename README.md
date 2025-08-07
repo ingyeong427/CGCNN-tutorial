@@ -10,7 +10,17 @@
 
 우선 anaconda prompt 프로그램을 실행시켜야 한다.
 
+우선 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
+~~~
+conda update -n base -c defaults conda
+~~~
+만일 업데이트를 했음에도 자꾸 
 
+<img width="797" height="105" alt="image" src="https://github.com/user-attachments/assets/de7767a5-6b5d-40f2-a602-6fe312ed18f5" />
 
+과 같이 뜬다면, 
 
-
+~~~
+conda update conda --all
+~~~
+을 통해 해결해줄 수 있다.
