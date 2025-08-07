@@ -1,2 +1,3 @@
 # CGCNN-tutorial
-Tutorial of CGCNN
+초기 환경 설정
+
