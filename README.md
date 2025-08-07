@@ -24,8 +24,20 @@ conda update conda --all
 ~~~
 을 통해 해결해줄 수 있다.
 
-제대로 업데이트 되었는지 
+
+제대로 업데이트 되었는지는
 ~~~
 conda --version
 ~~~
 을 통해 확인하면 된다.
+
+~~~
+#PyTorch 설치
+!pip install torch
+
+# scikit-learn 설치
+!pip install scikit-learn
+
+# Pymatgen 설치
+!pip install pymatgen
+~~~
