@@ -13,11 +13,10 @@ anaconda prompt 프로그램을 실행시켜준 후, 다음처럼 입력하여 �
 conda update -n base -c defaults conda
 ~~~
 만일 업데이트를 했음에도 자꾸 
-
-<img width="797" height="105" alt="image" src="https://github.com/user-attachments/assets/de7767a5-6b5d-40f2-a602-6fe312ed18f5" />
-
+~~~
+WARNING: A newer version of conda exists.
+~~~
 와 같이 뜬다면, 
-
 ~~~
 conda update conda --all
 ~~~
