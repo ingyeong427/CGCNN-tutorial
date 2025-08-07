@@ -9,6 +9,7 @@
 ★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 라이브러를 설치해줘야 한다.★
 
 **1. conda 준비**
+
 anaconda prompt 프로그램을 실행시켜준 후, 맨 앞이 (base)로 시작하는 것을 확인하고 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
 ~~~
 conda update -n base -c defaults conda
@@ -33,6 +34,7 @@ conda --version
 을 통해 확인하면 된다.
 
 **2. cgcnn env 만들어주기**
+
 PyTorch, scikit-learn, pymatgen를 conda 전체가 아니라 필요한 환경에만 설치하기 위해 다음과 같은 코드로 따로 환경을 구성해준다.
 
 
