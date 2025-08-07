@@ -1,7 +1,3 @@
 # CGCNN-tutorial
-초기 환경 설정
-밑 줄은 코드
-```
-contact
-```
+이 튜토리얼은 <https://colab.research.google.com/drive/19habZtpW5luFECqRy7WrjDa1keAj2Xyg#scrollTo=gbppBq-AipwL>의 data를 가지고 진행한 실습을 step-by-step으로 나타낸 것이다.
 
