@@ -30,7 +30,7 @@ conda update conda --all
 conda --version
 ~~~
 을 통해 확인하면 된다.
------------------
+
 ~~~
 #PyTorch 설치
 !pip install torch
