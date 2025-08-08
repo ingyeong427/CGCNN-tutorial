@@ -81,17 +81,20 @@ usage: main.py [-h]
 
 ### 각 파일 설명
 
-- `.cif` : 결정구조에 대한 정보를 담고 있음.
+- `id.cif` : 결정구조에 대한 정보를 담고 있음.
 - `atom_init.json` : 주기율표를 기준으로 input feature 벡터를 만들어냄. 각 원소에 대한 초기화된 벡터를 저장하고 있음.
-- `id_prop.csv` : id와 property를 묶은 csv 파일.
+- `id_prop.csv` : id와 property를 묶은 csv 파일. 1열에는 각 결정의 id, 2열에는 예측하고자 물성값이 적혀있음.
   
   `id`란 데이터셋 안에서 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
   
   `prop`란 예측하려는 물성값(ex. bandgap, formation energy)
-  
-- `main.py` : : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
- 
 
+학습(train.py)를 할 때는 2열의 물성값이 정답으로 쓰이지만, 예측(predict.py) 할 때는 정답 값이 필요 없음. 하지만 비워둘 시에 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 함.
+  
+- `main.py` : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
+- `.py` :
+- `.pth` :
+- 
 
 data.py : main.py가 id를 받아서 넘기면 쿵짝쿵짝 후 다시 main.py에게 벡터화 된 그래프를 넘겨줌.
 
