@@ -60,6 +60,7 @@ pip list를 입력했을 때, 리스트에 세 패키지가 포함되어 있다�
 컴퓨터 상에서 구글 드라이브 폴더를 우클릭 하고 속성에 들어가면, 다음과 같이 파일 경로가 나온다.
 
 <img width="349" height="42" alt="image" src="https://github.com/user-attachments/assets/a2af97f6-29a4-4e92-980a-2edae9e5edf9" />
+
 ~~~
 cd Desktop
 cd summer
