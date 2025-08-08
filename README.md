@@ -10,7 +10,7 @@
 ★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지지를 설치해줘야 한다.★
 
 
-**1. conda 준비**
+### **1. conda 준비**
 
 anaconda prompt 프로그램을 실행시켜준 후, 맨 앞이 (base)로 시작하는 것을 확인하고 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
 ~~~
@@ -36,7 +36,7 @@ conda --version
 을 통해 확인하면 된다.
 
 
-**2. cgcnn env 만들어주기**
+### **2. 가상환경 만들고 그 안에 패키지 설치치**
 
 conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 가상 환경을 구성해준다.
 ~~~
