@@ -110,7 +110,7 @@ bulk structure : 아이디를 받아서 구조를 내놓음.
 
 ### 각 폴더 설명
 - `data` : Materials Project에서 가져온 train/predict를 위한 데이터가 들어가 있음.
-- `sample-classification`, `sample-regression` :
+  - `sample-classification`, `sample-regression` :
   
   Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
 
