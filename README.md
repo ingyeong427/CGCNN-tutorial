@@ -7,7 +7,7 @@
 
 
 ## 프로그램 설치 및 환경 설정
-★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 라이브러를 설치해줘야 한다.★
+★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지지를 설치해줘야 한다.★
 
 
 **1. conda 준비**
@@ -40,9 +40,9 @@ conda --version
 
 conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 환경을 구성해준다.
 ~~~
-cgcnn이라는 conda env 생성해주는 코드 찾기
+conda create -n cgcnn
 ~~~
-
+생성된 'cgcnn'이라는 환경에 세 패키지를 설치해준다.
 ~~~
 #PyTorch 설치
 !pip install torch
