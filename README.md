@@ -61,9 +61,16 @@ pip list를 입력했을 때, 리스트에 세 패키지가 포함되어 있다�
 
 <img width="349" height="42" alt="image" src="https://github.com/user-attachments/assets/a2af97f6-29a4-4e92-980a-2edae9e5edf9" />
 
+경로 확인 후, cd 명령어를 이용해 파일 경로까지 거슬러 올라가준다.
 ~~~
 cd Desktop
 cd summer
 cd google_drive_CGCNN
 ~~~
-이런 식으로 파일 경로까지 거슬러 올라가준다.
+
+다운받았던 파일이 있는 경로에 들어간 후, 그 폴더 안에 있던 코드인 main.py를 시험삼아 실행시켜 봤을 때 usage: main.py [-h]~.. 처럼 쭉 뜬다면 모든 준비가 끝난 것이다.
+~~~
+python main.py -h
+~~~
+
+
