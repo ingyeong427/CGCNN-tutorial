@@ -6,8 +6,8 @@
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 ## 📌 프로그램 설치 및 환경설정
-CGCNN 실습을 위해서는 우리가 만들어 놓은 가상환경 안에 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치해줘야 한다.
-우선 conda 자체를 최신 버전으로 업데이트 하고, 가상환경을 만들어준 뒤 그 안에 패키지를 설치할 것이다.
+**CGCNN 실습을 위해서는 우리가 만들어 놓은 가상환경 안에 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치해줘야 한다.
+우선 conda 자체를 최신 버전으로 업데이트 하고, 가상환경을 만들어준 뒤 그 안에 패키지를 설치할 것이다.**
 
 
 ### **1. conda 준비**
@@ -82,7 +82,7 @@ usage: main.py [-h]
 ### 각 파일 설명
 
 - `.cif` : 결정구조에 대한 정보를 담고 있음.
-- id_prop.csv : id와 property를 묶은 csv 파일. 이때 id란
+- `id_prop.csv` : id와 property를 묶은 csv 파일. 이때 `id`란 
 
 main.py : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
 
