@@ -1,4 +1,4 @@
-# CGCNN-tutorial
+# 🖥️CGCNN-tutorial
 이 튜토리얼은 
 <https://colab.research.google.com/drive/19habZtpW5luFECqRy7WrjDa1keAj2Xyg#scrollTo=gbppBq-AipwL>의 data를 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
 
@@ -7,7 +7,7 @@
 
 
 ## :pushpin: 프로그램 설치 및 환경 **설정
-★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지지를 설치해줘야 한다.★**
+CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지지를 설치해줘야 한다.
 
 
 ### **1. conda 준비**
