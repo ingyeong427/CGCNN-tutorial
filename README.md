@@ -38,18 +38,20 @@ conda --version
 
 **2. cgcnn env 만들어주기**
 
-conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 환경을 구성해준다.
+conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 가상 환경을 구성해준다.
 ~~~
 conda create -n cgcnn
 ~~~
-생성된 'cgcnn'이라는 환경에 세 패키지를 설치해준다.
+생성된 'cgcnn'이라는 이름의 가상 환경에 세 패키지를 설치해준다.
+이때, pip 명령어는 파이썬으로 작성된 패키지 라이브러리를 설치하고 관리할 때 사용한다.
 ~~~
 #PyTorch 설치
-!pip install torch
+pip install torch
 
 # scikit-learn 설치
-!pip install scikit-learn
+pip install scikit-learn
 
 # Pymatgen 설치
-!pip install pymatgen
+pip install pymatgen
 ~~~
+pip list를 입력했을 때, 리스트에 세 패키지가 포함되어 있다면 설치 성공이다.
