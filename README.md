@@ -5,6 +5,7 @@
 하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다.
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
+
 ## 프로그램 설치 및 환경 설정
 ★CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 라이브러를 설치해줘야 한다.★
 
@@ -24,7 +25,7 @@ latest version: 25.7.0
 ~~~
 conda update conda --all
 ~~~
-을 통해 해결해줄 수 있다.
+을 입력하여 해결할 수 있다.
 
 
 제대로 업데이트 되었는지는
@@ -35,7 +36,7 @@ conda --version
 
 **2. cgcnn env 만들어주기**
 
-PyTorch, scikit-learn, pymatgen를 conda 전체가 아니라 필요한 환경에만 설치하기 위해 다음과 같은 코드로 따로 환경을 구성해준다.
+conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 환경을 구성해준다.
 ~~~
 cgcnn이라는 conda env 생성해주는 코드 찾기
 ~~~
