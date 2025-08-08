@@ -99,10 +99,13 @@ usage: main.py [-h]
 
 - `main.py` : input과 output을 가지고 학습함. 이때 input은 MP의 id이고, output은 bulk property.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
-- `model.py` : graph convolution에 필요한 class들이 들어가있음. 
+- `model.py` : graph convolution에 필요한 class들이 들어가있음.
+- `predict.py` :
+- `draw_graph.py` : 결과를 그래프로 나타내주는 코드.
+- `__init__.py` : 왜 있는지 모르겠음;;;;
 - `.pth` :
-- `test_result.csv` : 평가 데이터의 예측 결과???
 - `mp-ids.csv` :
+
 
 ### 각 폴더 설명
 - `data` : Materials Project에서 가져온 train & predict를 위한 데이터가 들어가 있음.
@@ -113,8 +116,13 @@ usage: main.py [-h]
     모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
     우리가 다운받은 샘플 코드 중에서, data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
-- `node_vector_generation` :
-- `pre-trained` :
+- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있음.
+  
+   node feature vector에 대한 정보는 `atom_init` 파일에 저장되어 있음.
+  
+   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드를 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정됨.
+   
+- `pre-trained` : 
 - `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
 - `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
