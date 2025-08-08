@@ -63,9 +63,7 @@ pip list를 입력했을 때, 리스트에 세 패키지가 포함되어 있다�
 
 경로 확인 후, cd 명령어를 이용해 파일 경로까지 거슬러 올라가준다.
 ~~~
-cd Desktop
-cd summer
-cd google_drive_CGCNN
+cd Desktop/Summer/google_drive_CGCNN
 ~~~
 
 다운받았던 파일이 있는 경로에 들어간 후, 그 폴더 안에 있던 코드인 main.py를 시험삼아 실행시켜 봤을 때 
@@ -97,3 +95,7 @@ atom_init.json : 주기율표를 기준으로 input feature 벡터를 만들어�
 main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
 이때 폴더(root_dirx)에는 id_prop.csv, atom_init.json, cif 좌표 파일들..
 
+~~~
+python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
+~~~
+python에게 main.py 파일을 돌려라! ratio는 다음과 같이! 우리가 train 하고자 하는 데이터의 폴더 location은 다음과 같다!
