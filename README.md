@@ -45,7 +45,7 @@ conda create -n cgcnn
 생성된 'cgcnn'이라는 이름의 가상 환경에 세 패키지를 설치해준다.
 이때, pip 명령어는 파이썬으로 작성된 패키지 라이브러리를 설치하고 관리할 때 사용한다.
 ~~~
-#PyTorch 설치
+# PyTorch 설치
 pip install torch
 
 # scikit-learn 설치
@@ -58,6 +58,7 @@ pip list를 입력했을 때, 리스트에 세 패키지가 포함되어 있다�
 
 구글 드라이브에서 다운받았던 파일이 있는 경로로 이동해줘야 한다.
 컴퓨터 상에서 구글 드라이브 폴더를 우클릭 하고 속성에 들어가면, 다음과 같이 파일 경로가 나온다.
+
 <img width="349" height="42" alt="image" src="https://github.com/user-attachments/assets/a2af97f6-29a4-4e92-980a-2edae9e5edf9" />
 ~~~
 cd Desktop
