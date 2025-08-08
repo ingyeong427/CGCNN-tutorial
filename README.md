@@ -82,7 +82,9 @@ usage: main.py [-h]
 ### 각 파일 설명
 
 - `.cif` : 결정구조에 대한 정보를 담고 있음.
-- `id_prop.csv` : id와 property를 묶은 csv 파일. 이때 `id`란 
+- `id_prop.csv` : id와 property를 묶은 csv 파일.
+  
+  이때 `id`란 데이터셋 안에서 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 붙여준 것이라고 생각하면 된다.
 
 main.py : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
 
