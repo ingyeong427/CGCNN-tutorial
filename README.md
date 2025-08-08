@@ -100,7 +100,7 @@ usage: main.py [-h]
 - `main.py` : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
 - `.py` :
 - `.pth` :
-- 
+- `test_result.csv` : 평가 데이터의 예측 결과.
 
 data.py : main.py가 id를 받아서 넘기면 쿵짝쿵짝 후 다시 main.py에게 벡터화 된 그래프를 넘겨줌.
 
@@ -109,13 +109,18 @@ model.py : graph convolution에 필요한 class들이 들어가있음.
 bulk structure : 아이디를 받아서 구조를 내놓음.
 
 ### 각 폴더 설명
-- `sample-classification`, `sample-regression`:
+- `data` : Materials Project에서 가져온 train/predict를 위한 데이터가 들어가 있음.
+- `sample-classification`, `sample-regression` :
   
-Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
+  Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
 
-모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
+  모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
-우리가 다운받은 샘플 코드 중에서, data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
+  우리가 다운받은 샘플 코드 중에서, data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
+- `node_vector_generation` :
+- `pre-trained` :
+- `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
+- `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
 
 main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
