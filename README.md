@@ -79,6 +79,8 @@ usage: main.py [-h]
 
 ## 📌 코드 Framework
 
+### 각 파일 설명
+
 
 main.py : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
 
