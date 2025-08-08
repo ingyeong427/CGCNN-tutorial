@@ -96,20 +96,16 @@ usage: main.py [-h]
   학습(train.py) 할 때는 2열의 물성값이 정답으로 쓰이지만, 예측(predict.py) 할 때는 정답 값이 필요 없음. 
 
   하지만 비워둘 시에 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 함.
-  
-- `main.py` : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
-- `.py` :
+
+- `main.py` : input과 output을 가지고 학습함. 이때 input은 MP의 id이고, output은 bulk property.
+- `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
+- `model.py` : graph convolution에 필요한 class들이 들어가있음. 
 - `.pth` :
-- `test_result.csv` : 평가 데이터의 예측 결과.
-
-data.py : main.py가 id를 받아서 넘기면 쿵짝쿵짝 후 다시 main.py에게 벡터화 된 그래프를 넘겨줌.
-
-model.py : graph convolution에 필요한 class들이 들어가있음. 
-
-bulk structure : 아이디를 받아서 구조를 내놓음.
+- `test_result.csv` : 평가 데이터의 예측 결과???
+- `mp-ids.csv` :
 
 ### 각 폴더 설명
-- `data` : Materials Project에서 가져온 train/predict를 위한 데이터가 들어가 있음.
+- `data` : Materials Project에서 가져온 train & predict를 위한 데이터가 들어가 있음.
   - `sample-classification`, `sample-regression` :
   
     Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
