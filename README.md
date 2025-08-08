@@ -108,6 +108,14 @@ model.py : graph convolution에 필요한 class들이 들어가있음.
 
 bulk structure : 아이디를 받아서 구조를 내놓음.
 
+### 각 폴더 설명
+- `sample-classification`, `sample-regression`:
+  
+Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
+
+모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
+
+우리가 다운받은 샘플 코드 중에서, data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
 
 
 main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
