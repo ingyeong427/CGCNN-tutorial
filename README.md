@@ -99,6 +99,8 @@ usage: main.py [-h]
 
 - `main.py` : input과 output을 가지고 학습함. 이때 input은 MP의 id이고, output은 bulk property.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
+
+  이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.
 - `model.py` : graph convolution에 필요한 class들이 들어가있음.
 - `predict.py` :
 - `draw_graph.py` : 결과를 그래프로 나타내주는 코드.
@@ -122,7 +124,7 @@ usage: main.py [-h]
   
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드를 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정됨.
    
-- `pre-trained` : 
+- `pre-trained` : 논문에서 보고된 trained model에 대한 data가 들어가 있음.
 - `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
 - `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
