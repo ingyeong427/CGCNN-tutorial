@@ -6,8 +6,8 @@
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 
-## 📌 프로그램 설치 및 환경 **설정
-CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지지를 설치해줘야 한다.
+## 📌 프로그램 설치 및 환경설정
+CGCNN을 활용하기 위해서는 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치해줘야 한다.
 
 
 ### **1. conda 준비**
@@ -79,4 +79,4 @@ usage: main.py [-h]
 .
 ~~~
 
-## 논문 원작자 코드 실습습
+## 📌 논문 원작자 코드 실습
