@@ -84,9 +84,17 @@ usage: main.py [-h]
 
 
 main.py : input과 output을 가지고 학습하는 지점으로, 제일 바깥 단에서 돌고 있음. 이때 input은 Materials Property의 id이고, output은 property.
+
 id_prop.csv : id와 property를 묶은 csv 파일
+
 data.py : main.py가 id를 받아서 넘기면 쿵짝쿵짝 후 다시 main.py에게 벡터화 된 그래프를 넘겨줌.
+
 model.py : graph convolution에 필요한 class들이 들어가있음. 
+
 bulk structure : 아이디를 받아서 구조를 내놓음.
+
 atom_init.json : 주기율표를 기준으로 input feature 벡터를 만들어냄.
+
+main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
+이때 폴더(root_dirx)에는 id_prop.csv, atom_init.json, cif 좌표 파일들..
 
