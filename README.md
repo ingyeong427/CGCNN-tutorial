@@ -1,8 +1,11 @@
 # 🖥️ CGCNN-tutorial
-이 튜토리얼은 
-<https://colab.research.google.com/drive/19habZtpW5luFECqRy7WrjDa1keAj2Xyg#scrollTo=gbppBq-AipwL>의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
+이 튜토리얼은 <https://colab.research.google.com/drive/19habZtpW5luFECqRy7WrjDa1keAj2Xyg#scrollTo=gbppBq-AipwL>의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
 
-하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다.
+이 파일은 논문 저자가 제공하고 있는 dataset인 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>을 포함하고 있다.  
+
+위 github의 데이터와 코드만으로는 실습을 진행하기에 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하는 것이다.  
+
+하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 ## 📌 프로그램 설치 및 환경설정
