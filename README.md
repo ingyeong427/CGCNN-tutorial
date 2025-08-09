@@ -84,10 +84,10 @@ usage: main.py [-h]
 
 ### 각 파일 설명
 
-- `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 이 결정에 Si, O, Fe 같은 원자가 이러한 방식으로 배치되어 있다는 것을 알려준다.
+- `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 이 결정에 Si, O, Fe 같은 원자가 어떠한 방식으로 배치되어 있는지 알려준다.
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
-  쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]로 변환하라고 알려주는 참고용 문서이다.
+  쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
     `id`란 데이터셋 안에서 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
@@ -116,7 +116,7 @@ usage: main.py [-h]
   
     Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
 
-    모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
+    모아놓은 이 폴더를 customized dataset이라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
     우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
 - `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
