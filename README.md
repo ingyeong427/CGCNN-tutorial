@@ -87,18 +87,18 @@ usage: main.py [-h]
 - `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 이 결정에 Si, O, Fe 같은 원자가 이러한 방식으로 배치되어 있다는 것을 알려준다.
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
-  쉽게 말해 Si는 벡터로 [숫자..], O는 [숫자...]로 변환하라고 알려주는 참고용 문서이다.
+  쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]로 변환하라고 알려주는 참고용 문서이다.
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
     `id`란 데이터셋 안에서 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
   
     `prop`란 예측하려는 물성값(ex. bandgap, formation energy)을 의미한다.
 
-  학습(train.py) 할 때는 2열의 물성값이 정답으로 쓰이지만, 예측(predict.py) 할 때는 정답 값이 필요 없음. 
+  학습(train.py) 할 때는 2열의 물성값이 정답으로 쓰이지만, 예측(predict.py) 할 때는 정답 값이 필요 없다.
 
-  하지만 비워둘 시에 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 함.
+  하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 한다.
 
-- `main.py` : input과 output을 가지고 학습함. 이때 input은 MP의 id이고, output은 bulk property.
+- `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
 
   이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.
@@ -111,19 +111,19 @@ usage: main.py [-h]
 
 
 ### 각 폴더 설명
-- `data` : Materials Project에서 가져온 train & predict를 위한 데이터가 들어가 있음.
+- `data` :MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
   - `sample-classification`, `sample-regression` :
   
     Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
 
     모아놓은 이 폴더를 customized dataset라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
-    우리가 다운받은 샘플 코드 중에서, data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
-- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있음.
+    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
+- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
   
-   node feature vector에 대한 정보는 `atom_init` 파일에 저장되어 있음.
+   node feature vector에 대한 정보는 `atom_init` 파일에 저장되어 있다.
   
-   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드를 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정됨.
+   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정된다.
    
 - `pre-trained` : 논문에서 보고된 trained model에 대한 data가 들어가 있음.
 - `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
