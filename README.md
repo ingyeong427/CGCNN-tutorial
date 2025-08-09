@@ -3,7 +3,7 @@
 
 이 파일은 논문 저자가 제공하고 있는 dataset인 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>을 포함하고 있다.  
 
-위 github의 데이터와 코드만으로는 실습을 진행하기에 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하는 것이다.  
+위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하는 것이다.  
 
 하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
@@ -101,10 +101,11 @@ usage: main.py [-h]
 - `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
 
-  이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.
+  이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
+  
 - `model.py` : graph convolution에 필요한 class들이 들어가있음.
 - `predict.py` :
-- `draw_graph.py` : 결과를 그래프로 나타내주는 코드.
+- `draw_graph.py` : 결과를 그래프로 나타내주는 코드이다.
 - `__init__.py` : 왜 있는지 모르겠음;;;;
 - `.pth` :
 - `mp-ids.csv` :
@@ -121,11 +122,11 @@ usage: main.py [-h]
     우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
 - `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
   
-   node feature vector에 대한 정보는 `atom_init` 파일에 저장되어 있다.
+   node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
   
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정된다.
    
-- `pre-trained` : 논문에서 보고된 trained model에 대한 data가 들어가 있음.
+- `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
 - `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
 - `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
