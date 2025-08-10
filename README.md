@@ -84,7 +84,7 @@ usage: main.py [-h]
 
 ### 각 파일 설명
 
-#### input 파일
+#### 🔹 input 파일
 - `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 결정에 원자가 어떠한 방식으로 배치되어 있는지 좌표/격자에 대한 정보를 알려준다.
   
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
@@ -101,7 +101,7 @@ usage: main.py [-h]
 
   하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 한다.
 
-#### .py 파일
+#### 🔹 .py 파일
 
 - `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
@@ -117,7 +117,7 @@ usage: main.py [-h]
 - `mp-id.cif` : MP에서 제공하는 결정 구조 파일
 
 
-### 각 폴더 설명
+### 🔹 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
   - `sample-classification`, `sample-regression` :
   
