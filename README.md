@@ -94,7 +94,7 @@ usage: main.py [-h]
   
     `prop`란 예측하려는 물성값(ex. bandgap, formation energy)을 의미한다.
 
-  학습(train.py) 할 때는 2열의 물성값이 정답으로 쓰이지만, 예측(predict.py) 할 때는 정답 값이 필요 없다.
+  학습할 때는 2열의 물성값이 정답으로 쓰이지만, 예측할 때는 정답 값이 필요 없다.
 
   하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 한다.
 
@@ -119,7 +119,7 @@ usage: main.py [-h]
 
     모아놓은 이 폴더를 customized dataset이라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
-    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 customized dataset에 해당한다.
+    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 customized dataset에 해당한다.
 - `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
@@ -132,7 +132,6 @@ usage: main.py [-h]
 
 
 main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
-이때 폴더(root_dirx)에는 id_prop.csv, atom_init.json, cif 좌표 파일들..
 
 ~~~
 python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
