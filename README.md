@@ -107,7 +107,7 @@ usage: main.py [-h]
   
   참고) Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. mp-13, mp-241)
 
-   MP에서 제공하는 cif 파일은 mp-id.cif 형태로 제공된다.
+   MP에서 제공하는 결정구조 파일은 mp-id.cif 형태로 제공된다.
 
    단지 우리가 input으로 활용하는 데이터인 id_prop.csv의 첫 열과 cif 파일명을 일치시키기 위해 id.cif로 저장하는 것이다.
   
@@ -126,11 +126,11 @@ usage: main.py [-h]
   
 - `model.py` : graph convolution에 필요한 class들이 들어가있음.
 - `predict.py` :
-- `draw_graph.py` : 결과를 그래프로 나타내주는 코드이다.
+- `draw_graph.py` : 학습/예측 (?) 결과를 그래프로 나타내준다.
 - `__init__.py` : 왜 있는지 모르겠음;;;;
 - `.pth` :
-- `mp-ids.csv` :
-- `mp-id.cif` : MP에서 제공하는 결정 구조 파일
+
+
 
 
 ### 🔷 각 폴더 설명
