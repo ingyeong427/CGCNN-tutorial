@@ -84,10 +84,13 @@ usage: main.py [-h]
 
 ### 각 파일 설명
 
-- `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 이 결정에 Si, O, Fe 같은 원자가 어떠한 방식으로 배치되어 있는지 알려준다.
+#### input 파일
+- `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 결정에 원자가 어떠한 방식으로 배치되어 있는지 좌표/격자에 대한 정보를 알려준다.
+  
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
   쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
+  
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
     `id`란 데이터셋 안에서 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
@@ -97,6 +100,8 @@ usage: main.py [-h]
   학습할 때는 2열의 물성값이 정답으로 쓰이지만, 예측할 때는 정답 값이 필요 없다.
 
   하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 한다.
+
+#### .py 파일
 
 - `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
@@ -109,17 +114,18 @@ usage: main.py [-h]
 - `__init__.py` : 왜 있는지 모르겠음;;;;
 - `.pth` :
 - `mp-ids.csv` :
+- `mp-id.cif` : MP에서 제공하는 결정 구조 파일
 
 
 ### 각 폴더 설명
-- `data` :MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
+- `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
   - `sample-classification`, `sample-regression` :
   
     Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
 
-    모아놓은 이 폴더를 customized dataset이라고 부르는데, 이 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
+    모아놓은 이 input 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
-    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 customized dataset에 해당한다.
+    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 input 폴더에 해당한다.
 - `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
@@ -131,6 +137,17 @@ usage: main.py [-h]
 - `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
 
+
+-------------------------
+Materials Project 사이트에서는 보통 각 결정구조를 고유한 materials_id로 관리한다. (mp-13, mp-241 이런식으로..)
+ID.cif 파일은 보통 그 ID에 해당하는 결정구조의 좌표를 저장하고 있다.
+id_prop.csv 파일은 그 ID에 대응하는 물성값을 저장하고 있다.
+
+
+
+
+
+-----------------------------
 main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
 
 ~~~
