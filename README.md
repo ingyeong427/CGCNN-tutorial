@@ -96,9 +96,9 @@ usage: main.py [-h]
   
   참고) Materials Project 에서는 각 결정구조를 고유한 materials_id로 관리한다. (ex. mp-13, mp-241)
 
-        MP에서 제공하는 cif 파일은 mp-id.cif 형태로 제공된다.
+   MP에서 제공하는 cif 파일은 mp-id.cif 형태로 제공된다.
 
-        단지 우리가 input으로 활용하는 데이터인 id_prop.csv의 첫 열과 cif 파일명을 일치시키기 위해 id.cif로 저장하는 것이다.
+   단지 우리가 input으로 활용하는 데이터인 id_prop.csv의 첫 열과 cif 파일명을 일치시키기 위해 id.cif로 저장하는 것이다.
   
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
