@@ -5,7 +5,7 @@
 
 위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하였다.  
 
-하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 필자는 전체 폴더 명을 cgcnn_master 대신 google_drive_CGCNN으로 변경했다.
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 ## 📌 프로그램 설치 및 환경설정
@@ -166,13 +166,14 @@ usage: main.py [-h]
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
   
-   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다.
+   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
 
+## 📌 샘플 데이터 훈련 (txie-93)
 
------------------------------
-main.py만 돌리면서 어떤 폴더에 있는 데이터를 쓰라는 것만 지정해주면 됨. (data/sample-regression)
+main.py를 실행시킬 때 train:validation:test의 비율과 어떤 폴더에 있는 데이터를 사용할지를 지정해주면 된다. 
+코드를 실행시키는 위치는 main.py가 있는 폴더인 'cgcnn-master' 폴더에서 
 
 ~~~
 python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
