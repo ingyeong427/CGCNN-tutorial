@@ -89,7 +89,9 @@ usage: main.py [-h]
 
 파일은 다음과 같은 관계를 가지며 작동한다. 각 파일에 대한 상세한 설명은 하단에 기술하였다. 
 
-1) 경로 및 하이퍼파라미터 설정
+1) input 파일 및 하이퍼파라미터 설정
+2) main.py 실행시킨 후, data.py 호출
+  data.py는 id_prop.csv를 읽어 ID와 prop 맵핑.
 
 
 
@@ -122,20 +124,23 @@ usage: main.py [-h]
 
 #### 🔷 .py 파일
 
-**.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 코드를 동작시키는 것이다.**
+**.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 모델이 작동할 수 있는 코드를 동작시키는 것이다.**
 
 - `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
 - `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
 
   이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
-  
-- `model.py` : graph convolution에 필요한 class들이 들어가있음.
+
 - `predict.py` :
-- `draw_graph.py` : 학습/예측 (?) 결과를 그래프로 나타내준다.
-- `__init__.py` : 왜 있는지 모르겠음;;;;
-- `.pth` :
 
 
+- `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
+- `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
+  입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
+- `model.py` : graph convolution에 필요한 class들이 들어가있다.
+- `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
+
+#### 🔷 output 파일
 
 
 ### 🔷 각 폴더 설명
@@ -147,6 +152,7 @@ usage: main.py [-h]
     모아놓은 이 input 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
 
     우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 input 폴더에 해당한다.
+    
 - `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
