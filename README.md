@@ -130,13 +130,13 @@ usage: main.py [-h]
 
 - `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, MP로부터 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
 
-  기타 하이퍼파라미터도 `main.py -h`를 입력하면 조절할 수 있다.
+  참고) 기타 하이퍼파라미터도 `main.py -h`를 입력하면 조절할 수 있다.
   
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
   
-  **+a**
+  참고)
 
   <img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
 
