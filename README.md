@@ -170,7 +170,7 @@ usage: main.py [-h]
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
 
-## 📌 샘플 데이터 훈련 (txie-93)
+## 📌 샘플 데이터 훈련 (txie-93 version)
 
 우선 적은 데이터를 가지고 훈련해보기 위해, sample-regression이라는 폴더에 input 데이터를 모두 구성해놓았다.
 
@@ -178,9 +178,15 @@ main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 
 
 <img width="767" height="36" alt="image" src="https://github.com/user-attachments/assets/860237f0-c776-4482-af88-da370ad00b11" />
 
-main.py를 실행시킬 때는 다음과 같이 train:validation:test의 비율과, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
+main.py를 실행시킬 때는 다음과 같이 train : validation : test의 비율과, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
 
 ~~~
 python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/sample-regression
 ~~~
-현재 위치는 cgcnn-master 폴더인데, 이 폴더는 cgcnn-master/data/sample-regression에 있기 때문에 data/sample-regression 라고 적어줘야 한다.
+현재 위치는 cgcnn-master 폴더인데, 이 폴더는 cgcnn-master/data/sample-regression에 있기 때문에 data/sample-regression 라고 적어주는 것이다.
+
+훈련 결과에 대해서 그래프를 그리고 싶다면, 다음 코드를 실행시키면 된다.
+~~~
+python ./draw_graph.py
+~~~
+생성된 결과와 그래프들은 cgcnn-master 폴더에 csv 파일과 png 파일로 저장되어 있을 것이다.
