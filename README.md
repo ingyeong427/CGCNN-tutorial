@@ -95,7 +95,7 @@ usage: main.py [-h]
 
 1) input 파일 및 하이퍼파라미터 설정
 2) `main.py` 실행시키면 `id_prop.csv`를 읽어 첫 번째 열인 id의 리스트를 얻게 됨.
-3) `data.py`를 실행시키면 `main.py`에서 읽어낸 id 리스트가 `data.py`로 넘어감. `data.py`는 받은 id 리스트로 해당 `id.cif` 파일을 찾음.
+3) `data.py`를 호출하여 `main.py`에서 읽어낸 id 리스트가 `data.py`로 넘어감. `data.py`는 받은 id 리스트에 해당하는 `id.cif` 파일을 찾음.
 4) `id.cif`에서 얻은 결정구조는 `atom_init.json` 파일을 바탕으로 벡터화된 그래프 형태로 나타내짐.
 5) `data.py`에서 벡터화된 그래프는 다시 `main.py`로 반환됨. 이후 `id_prop.csv`에 따라 결정구조와 물성이 매칭됨.
 6) `main.py`는 하이퍼파라미터와 벡터화된 그래프 데이터를 `model.py`로 전송.
