@@ -190,3 +190,6 @@ python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/sample-regre
 python ./draw_graph.py
 ~~~
 생성된 결과와 그래프들은 cgcnn-master 폴더에 csv 파일과 png 파일로 저장되어 있을 것이다.
+
+
+## 📌 customized dataset 훈련 (colab version)
