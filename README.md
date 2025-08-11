@@ -131,7 +131,12 @@ usage: main.py [-h]
 - `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, MP로부터 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
-    이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
+  **+a**
+  `data.py` 중
+
+<img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
+
+  300번째 줄의 이 부분을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 - `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
@@ -151,11 +156,11 @@ usage: main.py [-h]
 
     우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 input 폴더에 해당한다.
     
-- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 수정할 수 있다.
+- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 조절할 수 있다.
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
   
-   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정된다.
+   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다.
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
 
