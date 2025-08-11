@@ -187,7 +187,7 @@ python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/sample-regre
 
 훈련 결과에 대해서 그래프를 그리고 싶다면, 다음 코드를 실행시키면 된다.
 ~~~
-python ./draw_graph.py
+python draw_graph.py
 ~~~
 생성된 결과와 그래프들은 cgcnn-master 폴더에 csv 파일과 png 파일로 저장되어 있을 것이다.
 
@@ -233,4 +233,12 @@ python draw_graph.py
 
 ## 📌 훈련된 CGCNN 모델을 가지고 물성 예측
 
-`pre-trained` 폴더에는 논문에 나오는 훈련된 CGCNN 모델이 들어있다. 이 모델을 가지고 실제로 물성을 예측해볼 것이다.
+`pre-trained` 폴더에는 논문에 나오는 훈련된 CGCNN 모델이 들어있다. 이 모델을 `predict.py`로 실행시키면 물성을 예측할 수 있다.
+
+예를 들어 `sample-regression` 폴더에 있는 결정의 formation energy를 예측하고 싶다면, 다음과 같이 코드를 작성하면 된다.
+
+~~~
+python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression
+~~~
+
+결과물은 `test_results.csv` 파일로 저장된다.
