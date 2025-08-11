@@ -100,7 +100,6 @@ usage: main.py [-h]
 7) `model.py`는 CGCNN 모델의 구조를 정의한 후에 다시 `main.py`로 반환.
 8) `main.py`에서 정해진 epoch 횟수만큼 학습 진행 후, 결과 데이터 생성.
 
-### 각 파일 설명
 
 ### 🔷 input 파일
 
