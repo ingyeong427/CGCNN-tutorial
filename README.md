@@ -223,7 +223,7 @@ Path : /data/data_classification_metal_1000/
 훈련은 github 코드와 동일한 방식으로 다음과 같이 진행하면 된다.
 
 ~~~
-python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/data_regression_formE_1000
+python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 ./data/data_regression_formE_1000
 ~~~
 
 그래프를 그리는 코드 또한 동일하다.
