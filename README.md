@@ -138,11 +138,9 @@ usage: main.py [-h]
   
   **+a**
 
-  `data.py` 중
-
   <img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
 
-    300번째 줄의 이 부분을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
+   data.py 코드 중 300번째 줄의 값들들을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 - `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
@@ -169,12 +167,6 @@ usage: main.py [-h]
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다.
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
-
--------------------------
-
-
-
-
 
 
 -----------------------------
