@@ -174,7 +174,7 @@ usage: main.py [-h]
 
 우선 적은 데이터를 가지고 훈련해보기 위해, sample-regression이라는 폴더에 input 데이터를 모두 구성해놓았다.
 
-main.py는 'cgcnn-master' 폴더에 들어있기 때문에 이 폴더의 경로에서 시작해야 한다.
+main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 폴더의 경로에서 시작해야 한다.
 
 <img width="767" height="36" alt="image" src="https://github.com/user-attachments/assets/860237f0-c776-4482-af88-da370ad00b11" />
 
