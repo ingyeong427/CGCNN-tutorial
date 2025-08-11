@@ -240,4 +240,4 @@ python draw_graph.py
 python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression
 ~~~
 
-결과물은 `test_results.csv` 파일로 저장된다.
+결과 데이터는 `test_results.csv` 파일로 저장된다.
