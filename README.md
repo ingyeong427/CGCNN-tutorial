@@ -148,9 +148,9 @@ usage: main.py [-h]
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
 
 ### 🔷 output 파일
-- `checkpoint.pth` : 마지막 epoch 모델 상태 저장.
-- `model_best.pth` : 학습 중 가장 좋은 성능을 낸 모델 저장.
-- `test_result.csv` : 평가 데이터의 예측 결과 저장.
+- `checkpoint.pth.tar` : 마지막 epoch 모델 저장.
+- `model_best.pth.tar` : 학습 중 가장 정확한 validation 결과를 낸 모델 저장.
+- `test_result.csv` : test set에 있는 각 결정의 ID, target value, predicted value 저장.
 
 ### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
@@ -230,3 +230,7 @@ python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/data_regress
 ~~~
 python ./draw_graph.py
 ~~~
+
+## 📌 훈련된 CGCNN 모델을 가지고 물성 예측
+
+`pre-trained` 폴더에는 논문에 나오는 훈련된 CGCNN 모델이 들어있다. 이 모델을 가지고 실제로 물성을 예측해볼 것이다.
