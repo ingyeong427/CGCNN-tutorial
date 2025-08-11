@@ -89,7 +89,8 @@ usage: main.py [-h]
 
 파일은 서로 다음과 같은 관계를 가지며 작동한다. 각 파일에 대한 상세한 설명은 하단에 기술하였다. 
 
-  <img width="1133" height="670" alt="image" src="https://github.com/user-attachments/assets/f6531234-0dc6-412b-b9fa-bfe323eb6e3e" />
+  ![그림1](https://github.com/user-attachments/assets/6919bb6d-28dc-47a7-9d87-fb076392c278)
+
 
 
 1) input 파일 및 하이퍼파라미터 설정
