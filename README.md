@@ -3,7 +3,7 @@
 
 이 파일은 논문 저자가 제공하고 있는 dataset인 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>을 포함하고 있다.  
 
-위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하였다.  
+위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 google colab 자료를 이용하였다.  
 
 하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
@@ -170,7 +170,7 @@ usage: main.py [-h]
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
 
-## 📌 샘플 데이터 훈련 (txie-93 version)
+## 📌 샘플 데이터 훈련 (txie-93 github version)
 
 우선 적은 데이터를 가지고 훈련해보기 위해, sample-regression이라는 폴더에 input 데이터를 모두 구성해놓았다.
 
@@ -192,4 +192,30 @@ python ./draw_graph.py
 생성된 결과와 그래프들은 cgcnn-master 폴더에 csv 파일과 png 파일로 저장되어 있을 것이다.
 
 
-## 📌 customized dataset 훈련 (colab version)
+## 📌 customized dataset 훈련 (google colab version)
+
+github에서 제공한 샘플 데이터셋은 크기가 매우 작기때문에, customized dataset 3가지를 제공한다. 데이터 수집 방식은 다음과 같다.
+
+- Materials Project에서 조건을 is_stable=True (energy_above_hull = 0), 삼원계 이하, 그리고 포함원소의 원자번호를 Bi 이하 (noble gas 원소 제외) 조건으로 검색하면 22,962개의 구조-물성 (formation energy, bandgap) 데이터를 획득
+- 여기서 랜덤하게 1,000개를 뽑아서 아래의 데이터셋을 구성한다.
+- Band gap의 경우, metal 500개, non-metal 500개임.
+  
+  <img width="1908" height="685" alt="download" src="https://github.com/user-attachments/assets/78714a78-efc5-4732-8a2d-8936756709e2" />
+  
+**Dataset #1. regression (formation energy)**
+
+data size : 1000
+
+Path : /data/data_regression_formE_1000/
+
+**Dataset #2. regression (band gap)**
+
+data size : 1000
+
+Path : /data/data_regression_bandgap_1000/
+
+**Dataset #3. classification (band gap)**
+
+data size : 1000
+
+Path : /data/data_classification_metal_1000/
