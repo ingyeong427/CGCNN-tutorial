@@ -90,8 +90,13 @@ usage: main.py [-h]
 파일은 다음과 같은 관계를 가지며 작동한다. 각 파일에 대한 상세한 설명은 하단에 기술하였다. 
 
 1) input 파일 및 하이퍼파라미터 설정
-2) main.py 실행시킨 후, data.py 호출
-  data.py는 id_prop.csv를 읽어 ID와 prop 맵핑.
+2) `main.py` 실행시키면 `id_prop.csv`를 읽어 첫 번째 열인 id의 리스트를 얻게 됨.
+3) `data.py`를 실행시키면 `main.py`에서 읽어낸 id 리스트가 `data.py`로 넘어감. `data.py`는 받은 id 리스트로 해당 `id.cif` 파일을 찾음.
+4) `id.cif`에서 얻은 결정구조는 `atom_init.json` 파일을 바탕으로 벡터화된 그래프 형태로 나타내짐.
+5) `data.py`에서 벡터화된 그래프는 다시 `main.py`로 반환됨. 이후 `id_prop.csv`에 따라 결정구조와 물성이 매칭됨.
+6) `main.py`는 하이퍼파라미터와 벡터화된 그래프 데이터를 `model.py`로 전송.
+7) `model.py`는 CGCNN 모델의 구조를 정의한 후에 다시 `main.py`로 반환.
+8) `main.py`에서 정해진 epoch 횟수만큼 학습 진행 후, 결과 데이터 생성.
 
 
 
@@ -122,28 +127,23 @@ usage: main.py [-h]
 
   쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
 
-#### 🔷 .py 파일
+#### 🔷 모델 동작 파일
 
 **.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 모델이 작동할 수 있는 코드를 동작시키는 것이다.**
 
-- `main.py` : input과 output을 가지고 학습한다. 이때 input은 'Materials Project(MP)'의 id이고, output은 bulk property이다.
-- `data.py` : main.py로부터 받은 id를 bulk structure(회색)로 넘겨 구조를 얻어냄. 이후 다시 main.py에게 벡터화 된 그래프 형태로 넘겨줌.
-
-  이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
-
-- `predict.py` :
-
-
-- `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
+- `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, MP로부터 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
+    이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
 - `model.py` : graph convolution에 필요한 class들이 들어가있다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
+- `predict.py` :
 
 #### 🔷 output 파일
+- `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
+- `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
 
-
-### 🔷 각 폴더 설명
+#### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
   - `sample-classification`, `sample-regression` :
   
@@ -160,8 +160,7 @@ usage: main.py [-h]
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정된다.
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
-- `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
-- `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
+
 
 
 
