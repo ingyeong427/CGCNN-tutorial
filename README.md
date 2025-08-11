@@ -5,7 +5,7 @@
 
 위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 colab 자료를 이용하였다.  
 
-하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 필자는 전체 폴더 명을 cgcnn_master 대신 google_drive_CGCNN으로 변경했다.
+하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 ## 📌 프로그램 설치 및 환경설정
@@ -71,7 +71,7 @@ pip install pymatgen
 
 경로 확인 후, cd 명령어를 이용해 파일 경로까지 거슬러 올라가준다.
 ~~~
-cd Desktop/Summer/google_drive_CGCNN
+cd Desktop/Summer/cgcnn-master
 ~~~
 
 다운받았던 파일이 있는 경로에 들어간 후, 그 폴더 안에 있던 코드인 main.py를 시험삼아 실행시켜 봤을 때 
@@ -172,10 +172,15 @@ usage: main.py [-h]
 
 ## 📌 샘플 데이터 훈련 (txie-93)
 
-main.py를 실행시킬 때 train:validation:test의 비율과 어떤 폴더에 있는 데이터를 사용할지를 지정해주면 된다. 
-코드를 실행시키는 위치는 main.py가 있는 폴더인 'cgcnn-master' 폴더에서 
+우선 적은 데이터를 가지고 훈련해보기 위해, sample-regression이라는 폴더에 input 데이터를 모두 구성해놓았다.
+
+main.py는 'cgcnn-master' 폴더에 들어있기 때문에 이 폴더의 경로에서 시작해야 한다.
+
+<img width="767" height="36" alt="image" src="https://github.com/user-attachments/assets/860237f0-c776-4482-af88-da370ad00b11" />
+
+main.py를 실행시킬 때는 다음과 같이 train:validation:test의 비율과, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
 
 ~~~
-python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
+python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/sample-regression
 ~~~
-python에게 main.py 파일을 돌려라! ratio는 다음과 같이! 우리가 train 하고자 하는 데이터의 폴더 location은 다음과 같다!
+현재 위치는 cgcnn-master 폴더인데, 이 폴더는 cgcnn-master/data/sample-regression에 있기 때문에 data/sample-regression 라고 적어줘야 한다.
