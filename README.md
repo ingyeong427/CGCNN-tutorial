@@ -88,7 +88,8 @@ usage: main.py [-h]
 ## 📌 코드 Framework
 
 파일은 다음과 같은 관계를 가지며 작동한다. 각 파일에 대한 상세한 설명은 하단에 기술하였다. 
-                ![Uploading image.png…]()
+
+              <img width="717" height="682" alt="image" src="https://github.com/user-attachments/assets/b749d7b2-2906-428b-b644-06d474a5e507" />
 
 1) input 파일 및 하이퍼파라미터 설정
 2) `main.py` 실행시키면 `id_prop.csv`를 읽어 첫 번째 열인 id의 리스트를 얻게 됨.
