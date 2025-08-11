@@ -102,7 +102,7 @@ usage: main.py [-h]
 
 ### 각 파일 설명
 
-#### 🔷 input 파일
+### 🔷 input 파일
 
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
@@ -126,9 +126,9 @@ usage: main.py [-h]
 
   쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
 
-#### 🔷 모델 동작 파일
+### 🔷 모델 동작 파일
 
-**.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 모델이 작동할 수 있는 코드를 동작시키는 것이다.**
+.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 모델이 작동할 수 있는 코드를 동작시키는 것이다.
 
 - `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, MP로부터 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
 
@@ -147,12 +147,12 @@ usage: main.py [-h]
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
 
-#### 🔷 output 파일
+### 🔷 output 파일
 - `checkpoint.pth` : 마지막 epoch 모델 상태 저장.
 - `model_best.pth` : 학습 중 가장 좋은 성능을 낸 모델 저장.
 - `test_result.csv` : 평가 데이터의 예측 결과 저장.
 
-#### 🔷 각 폴더 설명
+### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
   - `sample-classification`, `sample-regression` :
   
