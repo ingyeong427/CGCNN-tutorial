@@ -98,9 +98,6 @@ usage: main.py [-h]
 7) `model.py`는 CGCNN 모델의 구조를 정의한 후에 다시 `main.py`로 반환.
 8) `main.py`에서 정해진 epoch 횟수만큼 학습 진행 후, 결과 데이터 생성.
 
-
-
-
 ### 각 파일 설명
 
 #### 🔷 input 파일
@@ -135,13 +132,14 @@ usage: main.py [-h]
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
     이걸 조절하면 edge vector와 관련된 hyperparameter들을 조절할 수 있음.???
-- `model.py` : graph convolution에 필요한 class들이 들어가있다.
+- `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
+- `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
-- `predict.py` :
 
 #### 🔷 output 파일
-- `checkpoint.pth` : 반복 학습하며 가장 좋았던 모델을 백업해 놓음.
-- `model_best.pth` : 학습 중 가장 좋은 모델을 저장해 놓음.
+- `checkpoint.pth` : 마지막 epoch 모델 상태 저장.
+- `model_best.pth` : 학습 중 가장 좋은 성능을 낸 모델 저장.
+- `test_result.csv` : 평가 데이터의 예측 결과 저장.
 
 #### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
@@ -160,9 +158,6 @@ usage: main.py [-h]
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 코드 수정 시 `atom_init` 파일도 덮어쓰기 모드로 수정된다.
    
 - `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
-
-
-
 
 -------------------------
 
