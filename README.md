@@ -134,9 +134,9 @@ usage: main.py [-h]
   **+a**
   `data.py` 중
 
-<img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
+  <img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
 
-  300번째 줄의 이 부분을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
+    300번째 줄의 이 부분을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 - `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
