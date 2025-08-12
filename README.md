@@ -140,7 +140,7 @@ usage: main.py [-h]
   
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
   
-  참고) data.py 코드 중 300번째 줄의 값들들을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
+  참고) data.py 코드 중 300번째 줄의 값들(radius,dmin, ..)을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 
  ~~~
 def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
@@ -180,7 +180,9 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 
 main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 폴더의 경로에서 시작해야 한다.
 
-<img width="767" height="36" alt="image" src="https://github.com/user-attachments/assets/860237f0-c776-4482-af88-da370ad00b11" />
+~~~
+(cgcnn) C:\Users\ingyeong\Desktop\Summer\cgcnn-master>
+~~~
 
 main.py를 실행시킬 때는 다음과 같이 train : validation : test의 비율과, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
 
