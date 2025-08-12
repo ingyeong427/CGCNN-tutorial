@@ -142,7 +142,10 @@ usage: main.py [-h]
   
   참고)
 
-  <img width="805" height="45" alt="image" src="https://github.com/user-attachments/assets/6d793393-e371-41ff-8541-8d726bdecc87" />
+ ~~~
+def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
+             random_seed=123):
+~~~
 
    data.py 코드 중 300번째 줄의 값들들을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 - `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
