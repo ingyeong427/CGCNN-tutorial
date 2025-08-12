@@ -1,12 +1,19 @@
 # 🖥️ CGCNN-tutorial
-이 튜토리얼은 <https://colab.research.google.com/drive/19habZtpW5luFECqRy7WrjDa1keAj2Xyg#scrollTo=gbppBq-AipwL>의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
+CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재 물성 예측용 그래프 신경망 네트워크 모델로, 다음 논문에 자세히 설명되어 있다.
 
-이 파일은 논문 저자가 제공하고 있는 dataset인 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>을 포함하고 있다.  
+<https://doi.org/10.1103/PhysRevLett.120.145301>
 
-위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사가 새로운 dataset과 보조기능 코드를 추가한 google colab 자료를 이용하였다.  
+이 논문에서 다루고 있는 모델의 실습 코드는 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>에서 다운받을 수 있다.
 
-하단의 구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+하지만 위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사님이 기존 github 데이터셋에 새로운 dataset과 보조기능 코드를 추가한 google colab 자료를 제공하고 있다. 
+
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
+
+이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
+구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+
+
+
 
 ## 📌 프로그램 설치 및 환경설정
 **CGCNN 실습을 위해서는 우리가 만들어 놓은 가상환경 안에 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치해줘야 한다.
