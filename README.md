@@ -140,14 +140,13 @@ usage: main.py [-h]
   
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
   
-  참고)
+  참고) data.py 코드 중 300번째 줄의 값들들을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 
  ~~~
 def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
-             random_seed=123):
+              random_seed=123):
 ~~~
-
-   data.py 코드 중 300번째 줄의 값들들을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
+   
 - `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
