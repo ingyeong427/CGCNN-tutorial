@@ -154,19 +154,10 @@ Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, �
 `.py` 파일은 마치 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, `.py` 파일의 코드를 실행시킴으로써 모델을 작동시키는 것이다.
 
 - `main.py` : 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는 CGCNN의 핵심 동작 파일로, `data.py`와 `model.py`를 연결해 train/predict를 수행한다.
-
-  참고) 기타 하이퍼파라미터도 `main.py -h`를 입력하면 조절할 수 있다.
   
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   
   입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json)으로 구성되어 있다.
-  
-  참고) data.py 코드 중 300번째 줄의 값들(radius,dmin, ..)을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
-
-~~~
-def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
-              random_seed=123):
-~~~
    
 - `model.py` : pyTorch를 이용해 graph convolutional network 구조를 정의해준다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
@@ -187,15 +178,12 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 - `data` : MP에서 가져온 train & predict를 위한 데이터 포함.
   - `sample-classification`, `sample-regression` : training을 위한 sample customized dataset.
 
-  -`data_classification/regression_` : 각 물성값을 훈련하기 위한 데이터셋.
+  - `data_classification/regression_` : 각 물성값을 훈련하기 위한 데이터셋.
     
 - `node_vector_generation` : node feature vector 수정을 위한 파일 포함.
-  
-   node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
-  
-   만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다
    
 - `pre-trained` : 논문에서 다루고 있는 pre-trained 모델에 대한 data 포함.
+  
 - `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값.
 
 ## 📌 기타 코드 수정법
@@ -211,11 +199,32 @@ python main.py [데이터셋 폴더 경로] [hyperparameter 수정 옵션]
 python main.py data/sample-classification --epochs 1200 --n-conv 5 --lr 0.03 
 ~~~
 
-#### 🔷 node vector 조절
+#### 🔷 node feature vector 조절
 
-#### 🔷 edge vector 조절
+node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
+  
+만일 node feature vector를 조절하고 싶다면, `encoding_feature_num.py`를 수정하면 된다.  
 
+7번째 줄부터 나와있는 feature list 중, 실제로 node feature vector에 활용하고자 하는 feature들을 선택해 12번째 줄의 feature set에 입력하면 된다.
 
+`encoding_feature_num.py`가 수정되면 자동으로 `atom_init.json` 파일도 덮어쓰기 모드로 수정되어 node vector가 조절된다.
+
+#### 🔷 edge feature vector 조절
+
+`data.py` 파일을 수정하면 edge vector를 조절할 수 있다. 
+
+`data.py`의 275~289번째 줄에서는 edge vector와 관련된 hyperparameter들을 설명하고 있다.
+
+<img width="1075" height="488" alt="image" src="https://github.com/user-attachments/assets/0ab9a534-36a5-49f0-a861-c2e507907753" />
+
+이 parameter들을 수정하여 edge vector를 조절하려면 300번째 줄의 값들(radius,dmin, ..)을 조절하면 된다. (Gaussian distancing 형태의 edge vector)
+
+<img width="1066" height="62" alt="image" src="https://github.com/user-attachments/assets/82c4211d-cfad-4403-86b6-a0a380fe66a0" />
+
+~~~
+def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
+              random_seed=123):
+~~~
 
 ## 📌 Training by txie-93 github dataset
 
