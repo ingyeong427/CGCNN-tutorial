@@ -205,18 +205,25 @@ main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 
 (cgcnn) C:\Users\ingyeong\Desktop\Summer\cgcnn-master>
 ~~~
 
-main.py를 실행시킬 때는 다음과 같이 train : validation : test의 비율과, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
+main.py를 실행시킬 때는 train, validation, test의 ratio 혹은 size와, 어느 경로에 있는 데이터를 사용할지를 지정해주면 된다. 
+
+이때 ratio와 size는 혼용하면 안된다.
 
 ~~~
-python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/sample-regression
+python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression
 ~~~
-현재 위치는 cgcnn-master 폴더인데, 이 폴더는 cgcnn-master/data/sample-regression에 있기 때문에 data/sample-regression 라고 적어주는 것이다.
+or
+~~~
+python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
+~~~
 
-훈련 결과에 대해서 그래프를 그리고 싶다면, 다음 코드를 실행시키면 된다.
+훈련이 끝나면 cgcnn-master 폴더에 `checkpoint.pth.tar`, `model_best.pth.tar`, 그리고 각종 `.csv`파일들이 저장된다. 
+
+이 결과들에 대해서 그래프를 그리고 싶다면, 다음 코드를 실행시키면 된다.
 ~~~
 python draw_graph.py
 ~~~
-생성된 결과와 그래프들은 cgcnn-master 폴더에 csv 파일과 png 파일로 저장되어 있을 것이다.
+생성된 그래프들은 cgcnn-master 폴더에 png 파일로 저장된다.
 
 
 ## 📌 customized dataset 훈련 (google colab version)
