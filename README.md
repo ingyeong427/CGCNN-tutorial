@@ -154,7 +154,7 @@ Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, �
 
 `.py` 파일은 마치 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, `.py` 파일의 코드를 실행시킴으로써 모델을 작동시키는 것이다.
 
-- `main.py` : CGCNN 모델의 핵심 원리가 구현되는 코드로, 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
+- `main.py` : 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는 CGCNN의 핵심 동작 파일로, `data.py`와 `model.py`를 연결해 train/predict를 수행한다.
 
   참고) 기타 하이퍼파라미터도 `main.py -h`를 입력하면 조절할 수 있다.
   
@@ -195,7 +195,9 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 
 ## 📌 샘플 데이터 훈련 (txie-93 github version)
 
-우선 적은 데이터를 가지고 훈련해보기 위해, sample-regression이라는 폴더에 input 데이터를 모두 구성해놓았다.
+우선 sample-regression 폴더에 있는 적은 수의 데이터를 가지고 훈련해볼 것이다. 
+
+단지 코드 동작을 확인하기 위해 구성해놓은 dataset이기 때문에, sample-regression과 sample-classification 폴더에 있는 id_prop.csv 파일의 prop 값들은 실제 물성값이 아닌 dummy 값이다.
 
 main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 폴더의 경로에서 시작해야 한다.
 
