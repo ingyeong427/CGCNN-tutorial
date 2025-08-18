@@ -285,9 +285,9 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 txie-93 github에서 제공하는 샘플 데이터셋은 크기가 매우 작기때문에, KIST의 김동훈 박사님이 customized dataset을 구글 드라이브에 제공하고 있다. 
 
-`data` 폴더에 들어있는 `data_`로 시작하는 하위 폴더들이 전부 customized dataset에 해당한다. 
+`data` 폴더에 들어있는 'data_' 이름의 하위 폴더들이 전부 customized dataset에 해당한다. 
 
-폴더명에는 각각 학습하고자 하는 물성과 cif 파일의 개수가 쓰여있고, bandgap 학습용 데이터셋은 metal non-metal cif 파일 개수가 1:1 비율로 구성되어 있다.
+폴더명에는 각각 학습하고자 하는 물성과 cif 파일의 개수가 쓰여있고, bandgap 학습용 데이터셋은 metal과 non-metal의 cif 파일 개수가 1:1 비율로 구성되어 있다.
   
 훈련은 이전에 진행한 것과 동일한 방식으로 진행하면 된다.
 
