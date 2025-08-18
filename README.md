@@ -119,11 +119,9 @@ usage: main.py [-h] [--task {regression, classification}]
 
 ### 🔷 input 파일
 
-Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
-
+Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
 
 실습 파일 중에서는 sample-classification과 sample-regression이 customized dataset에 해당한다.
-
 
 모델에 input으로 들어가는 customized dataset에는 다음 파일들이 포함되어야 한다.
 
@@ -152,7 +150,7 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
   쉽게 말해 Si는 벡터로 [숫자, , , ..], Na는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
   
 
-### 🔷 모델 동작 파일
+### 🔷 모델 동작 파일 (.py 파일)
 
 `.py` 파일은 마치 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, `.py` 파일의 코드를 실행시킴으로써 모델을 작동시키는 것이다.
 
@@ -166,37 +164,34 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
   
   참고) data.py 코드 중 300번째 줄의 값들(radius,dmin, ..)을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 
- ~~~
+~~~
 def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
               random_seed=123):
 ~~~
    
-- `model.py` : graph convolution에 필요한 정보들이 pytorch 패키지를 사용해 만들어져 있다.
+- `model.py` : pyTorch를 이용해 graph convolutional network 구조를 정의해준다.
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
 
 ### 🔷 output 파일
 - `checkpoint.pth.tar` : 학습 중간 저장용 파일로, 마지막 epoch 모델 저장.
 - `model_best.pth.tar` : validation accuracy가 가장 높았던 모델 저장.
-- `test_result.csv` : test set에 대해 정답값과 예측값을 기록한 파일로, 각 결정의 ID, 목표값(id_prop.csv 파일에서 임의로 넣어준 무의미한 값), 예측값(CGCNN이 예측한 값) 저장.
+- `test_result.csv` : test set으로 예측한 결과를 기록한 파일로 각 결정의 ID, 목표값(id_prop.csv 파일에서 넣어준 prop 값), 예측값(CGCNN이 예측한 값) 저장.
 
 ### 🔷 각 폴더 설명
-- `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
-  - `sample-classification`, `sample-regression` :
-  
-    Training과 Predicting 전에, CGCNN에게 입력할 데이터들을 하나의 폴더로 모아놓아야 한다. 
-
-    모아놓은 이 input 폴더에는 `id_prop.csv`, `atom_init.json`, `ID.cif` 파일이 들어가 있어야 한다.
-
-    우리가 다운받은 샘플 코드 중에서는 data 폴더 안에 있는 `sample-classification` 폴더와 `sample-regression` 폴더가 이 input 폴더에 해당한다.
+- `data` : MP에서 가져온 train & predict를 위한 데이터 포함.
+  - `sample-classification`, `sample-regression` : training을 위한 sample customized dataset.
     
-- `node_vector_generation` : 이 폴더 내에서 작업 시, node feature vector를 조절할 수 있다.
+    단, 이 폴더에 있는 id_prop.csv 파일은 코드 작동 확인용이고 실제 모델 훈련용은 아니기 때문에, prop 값은 dummy 값임.
+    
+- `node_vector_generation` : node feature vector 수정을 위한 파일 포함.
   
    node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
   
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다
    
-- `pre-trained` : 논문에서 보고되었던 학습된 모델에 대한 data가 들어가 있다.
+- `pre-trained` : 논문에서 다루고 있는 pre-trained 모델에 대한 data 포함.
+- `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값 포함.
 
 ## 📌 샘플 데이터 훈련 (txie-93 github version)
 
