@@ -122,7 +122,7 @@ usage: main.py [-h] [--task {regression, classification}]
 Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
 
 
-실습 파일 중에서는 sample-classification & sample-regression이 customized dataset에 해당한다.
+실습 파일 중에서는 sample-classification과 sample-regression이 customized dataset에 해당한다.
 
 
 모델에 input으로 들어가는 customized dataset에는 다음 파일들이 포함되어야 한다.
@@ -130,13 +130,13 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
 
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
-    `id`란 각 결정 구조를 구분하는 식별자로, 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
+    - `id`란 각 결정 구조를 구분하는 식별자로, 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
 
-   Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
+  참고로 Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
   
-    `property`란 목표 물성값(ex. bandgap, formation energy)을 의미한다.
+    - `property`란 물성값(ex. bandgap, formation energy)을 의미한다.
 
-  학습할 때는 2열의 물성값이 정답으로 쓰이지만, 예측할 때는 정답 값이 필요 없다.
+  Training 시에는 당연히 학습하고자 하는 재료의 실제 물성값을 넣어주어야 하지만, Predicting 과정에서는 물성값이 필요없다.
 
   하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰주어야 한다.
   
@@ -155,15 +155,15 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
 
 ### 🔷 모델 동작 파일
 
-.py 파일은 쉽게 말해 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, .py 파일을 실행시킴으로써 모델이 작동할 수 있는 코드를 동작시키는 것이다.
+`.py` 파일은 마치 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, `.py` 파일의 코드를 실행시킴으로써 모델을 작동시키는 것이다.
 
-- `main.py` : CGCNN의 핵심 원리가 구현되는 코드로, MP로부터 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
+- `main.py` : CGCNN 모델의 핵심 원리가 구현되는 코드로, 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는다.
 
   참고) 기타 하이퍼파라미터도 `main.py -h`를 입력하면 조절할 수 있다.
   
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   
-  입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json) 으로 구성되어 있다.
+  입력받은 id에 해당하는 결정구조(.cif)를 받아오는 지점과, 결정구조를 보고 벡터화시키는 지점(atom_init.json)으로 구성되어 있다.
   
   참고) data.py 코드 중 300번째 줄의 값들(radius,dmin, ..)을 조절하면 edge vector 조절이 가능하다. (Gaussian distancing 형태의 edge vector)
 
@@ -177,9 +177,9 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
 
 ### 🔷 output 파일
-- `checkpoint.pth.tar` : 마지막 epoch 모델 저장.
-- `model_best.pth.tar` : 학습 중 가장 정확한 validation 결과를 낸 모델 저장.
-- `test_result.csv` : test set에 있는 각 결정의 ID, target value, predicted value 저장.
+- `checkpoint.pth.tar` : 학습 중간 저장용 파일로, 마지막 epoch 모델 저장.
+- `model_best.pth.tar` : validation accuracy가 가장 높았던 모델 저장.
+- `test_result.csv` : test set에 대해 정답값과 예측값을 기록한 파일로, 각 결정의 ID, 목표값(id_prop.csv 파일에서 임의로 넣어준 무의미한 값), 예측값(CGCNN이 예측한 값) 저장.
 
 ### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터가 들어가 있다.
