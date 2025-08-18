@@ -10,7 +10,7 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
 이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
-구글 드라이브에서 제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 
 
 
@@ -20,9 +20,10 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 우선 conda 자체를 최신 버전으로 업데이트 하고, 가상환경을 만들어준 뒤 그 안에 패키지를 설치할 것이다.**
 
 
-### **1. conda 준비**
+### **1. conda 업데이트**
 
-anaconda prompt 프로그램을 실행시켜준 후, 맨 앞이 (base)로 시작하는 것을 확인하고 다음처럼 입력하여 아나콘다를 최신 버전으로 업그레이드 시켜준다.
+conda가 최신버전이 아니라면, 패키지 설치 시 에러가 뜰 수도 있다.
+anaconda prompt 프로그램을 실행시켜준 후, 다음처럼 입력하여 conda를 최신 버전으로 업데이트 시켜준다.
 ~~~
 conda update -n base -c defaults conda
 ~~~
@@ -32,7 +33,7 @@ WARNING: A newer version of conda exists.
 current version: 25.5.1
 latest version: 25.7.0
 ~~~
-와 같이 뜬다면, 
+처럼 뜬다면, 
 ~~~
 conda update conda --all
 ~~~
@@ -43,16 +44,18 @@ conda update conda --all
 ~~~
 conda --version
 ~~~
-을 통해 확인하면 된다.
+을 입력했을 때 최신 버전으로 뜨는지지 확인하면 된다.
 
 
 ### **2. 가상환경 만들고 그 안에 패키지 설치**
 
-conda 전체가 아니라 필요한 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 'cgcnn'이라는 이름을 붙인 가상 환경을 만들어준다.
+conda 전체가 아니라 실습을 진행할 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 새로운 가상 환경을 만들어준다. 
+
+환경 이름은 원하는 대로 지어주면 된다. 이 튜토리얼에서는 'cgcnn'이라는 이름을 붙인 가상환경을 만들 것이다.
 ~~~
 conda create -n cgcnn
 ~~~
-생성된 'cgcnn'이라는 이름의 가상 환경 안에 들어가준 후,
+기본환경인 (base) 대신 새로 생성된 (cgcnn)이라는 가상 환경을 활성화 시켜준 후,
 ~~~
 conda activate cgcnn
 ~~~
@@ -69,14 +72,16 @@ pip install scikit-learn
 # Pymatgen 설치
 pip install pymatgen
 ~~~
-`pip list`를 입력했을 때, 리스트에 세 패키지가 포함되어 있다면 설치 성공이다.
+`pip list`를 입력했을 때, 리스트에 세 패키지가 포함되어 있다면 성공적으로 설치된 이다.
 
 이제 구글 드라이브에서 다운받았던 파일이 있는 경로로 이동해줘야 한다.
 컴퓨터 상에서 구글 드라이브 폴더를 우클릭 하고 속성에 들어가면, 다음과 같이 파일 경로가 나온다.
 
-<img width="349" height="42" alt="image" src="https://github.com/user-attachments/assets/a2af97f6-29a4-4e92-980a-2edae9e5edf9" />
+~~~
+C:\Users\ingyeong\Desktop\Summer
+~~~
 
-경로 확인 후, cd 명령어를 이용해 파일 경로까지 거슬러 올라가준다.
+conda 내에서 이 파일에 접근하기 위해 prompt에 다음과 같이 경로를 입력해준다.
 ~~~
 cd Desktop/Summer/cgcnn-master
 ~~~
@@ -85,9 +90,9 @@ cd Desktop/Summer/cgcnn-master
 ~~~
 python main.py -h
 ~~~
-다음과 같이 뜬다면 모든 준비가 끝난 것이다.
+다음과 같이 option 목록이 쭉 뜬다면 실습을 위 준비가 끝난 것이다.
 ~~~
-usage: main.py [-h]
+usage: main.py [-h] [--task {regression, classification}]
 .
 .
 ~~~
