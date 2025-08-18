@@ -132,7 +132,7 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
   
     - `id` : 각 결정구조마다 번호를 부여해준 것.
 
-    참고로 Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
+      참고로 Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
   
     - `property` : 물성값(ex. bandgap, formation energy)을 의미.
 
