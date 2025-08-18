@@ -193,7 +193,7 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 - `pre-trained` : 논문에서 다루고 있는 pre-trained 모델에 대한 data 포함.
 - `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값 포함.
 
-## 📌 샘플 데이터 훈련 (txie-93 github version)
+## 📌 Training by txie-93 github dataset
 
 우선 sample-regression 폴더에 있는 적은 수의 데이터를 가지고 훈련해볼 것이다. 
 
@@ -225,6 +225,23 @@ python draw_graph.py
 ~~~
 생성된 그래프들은 cgcnn-master 폴더에 png 파일로 저장된다.
 
+## 📌 Predicting by txie-93 github dataset
+
+Predicting은 `predict.py` 코드를 이용하여 진행된다. 이 튜토리얼에서는 논문에 나오는 미리 훈련된 모델인 `pre-trained` dataset을 활용할 것이다. 예측하고자 하는 물성에 따라 해당하는 폴더를 사용하면 된다.
+
+예를 들어 `sample-regression` 폴더에 있는 결정의 formation energy를 예측하고 싶다면, 다음과 같이 코드를 작성하면 된다.
+
+~~~
+python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression
+~~~
+
+또다른 예시로 'sample-classification' 폴더에 있는 결정들에 대해 반도체면 (0), 도체면 (1)로 예측하고 싶다면 다음과 같이 코드를 작성하면 된다.
+
+~~~
+python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-classification
+~~~
+
+예측에 대한 결과 데이터들은 `test_results.csv` 파일로 저장된다.
 
 ## 📌 customized dataset 훈련 (google colab version)
 
@@ -267,12 +284,4 @@ python draw_graph.py
 
 ## 📌 훈련된 CGCNN 모델을 가지고 물성 예측
 
-`pre-trained` 폴더에는 논문에 나오는 훈련된 CGCNN 모델이 들어있다. 이 모델을 `predict.py`로 실행시키면 물성을 예측할 수 있다.
 
-예를 들어 `sample-regression` 폴더에 있는 결정의 formation energy를 예측하고 싶다면, 다음과 같이 코드를 작성하면 된다.
-
-~~~
-python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression
-~~~
-
-결과 데이터는 `test_results.csv` 파일로 저장된다.
