@@ -44,10 +44,10 @@ conda update conda --all
 ~~~
 conda --version
 ~~~
-을 입력했을 때 최신 버전으로 뜨는지지 확인하면 된다.
+을 입력했을 때 최신 버전으로 뜨는지 확인하면 된다.
 
 
-### **2. 가상환경 만들고 그 안에 패키지 설치**
+### **2. 가상환경 생성 후 그 안에 패키지 설치**
 
 conda 전체가 아니라 실습을 진행할 환경에만 PyTorch, scikit-learn, pymatgen를 설치하기 위해 다음과 같이 새로운 가상 환경을 만들어준다. 
 
@@ -90,7 +90,7 @@ cd Desktop/Summer/cgcnn-master
 ~~~
 python main.py -h
 ~~~
-다음과 같이 option 목록이 쭉 뜬다면 실습을 위 준비가 끝난 것이다.
+다음과 같이 option 목록이 쭉 뜬다면 실습을 위한 환경설정이 끝난 것이다.
 ~~~
 usage: main.py [-h] [--task {regression, classification}]
 .
@@ -118,27 +118,31 @@ usage: main.py [-h] [--task {regression, classification}]
 
 ### 🔷 input 파일
 
+Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
+모델에 input으로 들어가는 customized dataset에는 다음 파일들이 포함되어야 한다.
+
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
-    `id`란 각 결정 구조를 구분하는 식별자로, 말 그대로 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
+    `id`란 각 결정 구조를 구분하는 식별자로, 각 결정구조에 번호를 부여해준 것이라고 생각하면 된다.
+
+   Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
   
-    `prop`란 예측하려는 물성값(ex. bandgap, formation energy)을 의미한다.
+    `property`란 학습하려는 물성값(ex. bandgap, formation energy)을 의미한다.
 
   학습할 때는 2열의 물성값이 정답으로 쓰이지만, 예측할 때는 정답 값이 필요 없다.
 
-  하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰줘야 한다.
+  하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰주어야 한다.
 
-- `id.cif` : 결정구조에 대한 정보를 담고 있다. 쉽게 말해 결정에 원자가 어떠한 방식으로 배치되어 있는지 좌표/격자에 대한 정보를 담고있다.
-  
-  참고) Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. mp-13, mp-241)
+- `id.cif` : 결정구조에 대한 정보를 담고 있는 파일로, 결정의 물리적 특성, 좌표, 격자 등에 관한 정보를 알려준다.
 
-   MP에서 제공하는 결정구조 파일은 mp-id.cif 형태로 제공된다.
+   MP에서 제공하는 결정구조 파일은 'mp-id.cif' 형태로 제공된다. (ex. mp-13, mp-241)
 
-   단지 우리가 input으로 활용하는 데이터인 id_prop.csv의 첫 열과 cif 파일명을 일치시키기 위해 id.cif로 저장하는 것이다.
+   단지 우리가 input으로 활용하는 데이터인 'id_prop.csv'의 첫 열과 cif의 파일명을 일치시키기 위해 'id.cif'로 바꿔서 저장하는 것이다.
   
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
-  쉽게 말해 Si는 벡터로 [숫자, , , ..], O는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
+  쉽게 말해 Si는 벡터로 [숫자, , , ..], Na는 벡터로 [숫자, , , ..]와 같이 변환하라고 알려주는 참고용 문서이다.
+  
 
 ### 🔷 모델 동작 파일
 
