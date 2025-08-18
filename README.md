@@ -101,7 +101,8 @@ usage: main.py [-h] [--task {regression, classification}]
 
 파일은 서로 다음과 같은 관계를 가지며 작동한다. 각 파일에 대한 상세한 설명은 하단에 기술하였다. 
 
-  ![그림1](https://github.com/user-attachments/assets/6919bb6d-28dc-47a7-9d87-fb076392c278)
+<img width="1570" height="893" alt="image" src="https://github.com/user-attachments/assets/a4358561-610c-4029-8cb6-bcac41a28239" />
+
 
 
 
@@ -119,7 +120,13 @@ usage: main.py [-h] [--task {regression, classification}]
 ### 🔷 input 파일
 
 Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
+
+
+실습 파일 중에서는 sample-classification & sample-regression이 customized dataset에 해당한다.
+
+
 모델에 input으로 들어가는 customized dataset에는 다음 파일들이 포함되어야 한다.
+
 
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
@@ -127,17 +134,19 @@ Training과 Predicting을 위해서는 우선 필요한 데이터들을 하나�
 
    Materials Project 에서는 각 결정구조를 고유한 숫자인 'id'로 관리한다. (ex. cubic 구조의 SiO2 id는 8352)
   
-    `property`란 학습하려는 물성값(ex. bandgap, formation energy)을 의미한다.
+    `property`란 목표 물성값(ex. bandgap, formation energy)을 의미한다.
 
   학습할 때는 2열의 물성값이 정답으로 쓰이지만, 예측할 때는 정답 값이 필요 없다.
 
   하지만 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로, 아무 숫자라도 넣어서 형식을 맞춰주어야 한다.
+  
 
 - `id.cif` : 결정구조에 대한 정보를 담고 있는 파일로, 결정의 물리적 특성, 좌표, 격자 등에 관한 정보를 알려준다.
 
    MP에서 제공하는 결정구조 파일은 'mp-id.cif' 형태로 제공된다. (ex. mp-13, mp-241)
 
    단지 우리가 input으로 활용하는 데이터인 'id_prop.csv'의 첫 열과 cif의 파일명을 일치시키기 위해 'id.cif'로 바꿔서 저장하는 것이다.
+  
   
 - `atom_init.json` : 원소를 숫자로 표현하기 위한 초기 벡터 데이터로, 주기율표를 기준으로 각 원소에 대한 특성이 one-hot encoding 된 형태로 정리되어 있다.
 
