@@ -281,35 +281,15 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 예측에 대한 결과 데이터들은 `test_results.csv` 파일로 저장된다.
 
-## 📌 customized dataset 훈련 (google colab version)
+## 📌 Training by google drive dataset
 
-github에서 제공한 샘플 데이터셋은 크기가 매우 작기때문에, customized dataset 3가지를 제공한다. 데이터 수집 방식은 다음과 같다.
+txie-93 github에서 제공하는 샘플 데이터셋은 크기가 매우 작기때문에, KIST의 김동훈 박사님이 customized dataset을 구글 드라이브에 제공하고 있다. 
 
-- Materials Project에서 조건을 is_stable=True (energy_above_hull = 0), 삼원계 이하, 그리고 포함원소의 원자번호를 Bi 이하 (noble gas 원소 제외) 조건으로 검색하면 22,962개의 구조-물성 (formation energy, bandgap) 데이터를 획득
-- 여기서 랜덤하게 1,000개를 뽑아서 아래의 데이터셋을 구성한다.
-- Band gap의 경우, metal 500개, non-metal 500개임.
+`data` 폴더에 들어있는 `data_`로 시작하는 하위 폴더들이 전부 customized dataset에 해당한다. 
+
+폴더명에는 각각 학습하고자 하는 물성과 cif 파일의 개수가 쓰여있고, bandgap 학습용 데이터셋은 metal non-metal cif 파일 개수가 1:1 비율로 구성되어 있다.
   
-  <img width="1908" height="685" alt="download" src="https://github.com/user-attachments/assets/78714a78-efc5-4732-8a2d-8936756709e2" />
-  
-**Dataset #1. regression (formation energy)**
-
-data size : 1000
-
-Path : /data/data_regression_formE_1000/
-
-**Dataset #2. regression (band gap)**
-
-data size : 1000
-
-Path : /data/data_regression_bandgap_1000/
-
-**Dataset #3. classification (band gap)**
-
-data size : 1000
-
-Path : /data/data_classification_metal_1000/
-
-훈련은 github 코드와 동일한 방식으로 다음과 같이 진행하면 된다.
+훈련은 이전에 진행한 것과 동일한 방식으로 진행하면 된다.
 
 ~~~
 python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/data_regression_formE_1000
