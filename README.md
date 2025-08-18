@@ -112,7 +112,7 @@ usage: main.py [-h] [--task {regression, classification}]
 6) `main.py`는 하이퍼파라미터와 벡터화된 그래프 데이터를 `model.py`로 전송.
 7) `model.py`는 모델의 CNN 구조를 구축한 후에 다시 `main.py`로 반환.
 8) 정해진 epoch 횟수만큼 `main.py`을 통해 훈련 후, 훈련 결과 데이터 생성됨.
-9) 훈련된 결과들을 가지고 `predict.py` 진행 시, 예측 결과 데이터 생성됨.
+9) 훈련된 모델을 가지고 `predict.py` 진행 시, 예측 결과 데이터 생성됨.
 
 ------------------------
 
@@ -186,8 +186,8 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 ### 🔷 각 폴더 설명
 - `data` : MP에서 가져온 train & predict를 위한 데이터 포함.
   - `sample-classification`, `sample-regression` : training을 위한 sample customized dataset.
-    
-    단, 이 폴더에 있는 id_prop.csv 파일은 코드 작동 확인용이고 실제 모델 훈련용은 아니기 때문에, prop 값은 dummy 값임.
+
+  -`data_classification/regression_` : 각 물성값을 훈련하기 위한 데이터셋.
     
 - `node_vector_generation` : node feature vector 수정을 위한 파일 포함.
   
@@ -196,7 +196,26 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
    만일 node feature vector를 수정하고 싶다면, `encoding_feature_num.py` 의 feature set을 조절 시 `atom_init.json` 파일도 덮어쓰기 모드로 수정된다
    
 - `pre-trained` : 논문에서 다루고 있는 pre-trained 모델에 대한 data 포함.
-- `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값 포함.
+- `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값.
+
+## 📌 기타 코드 수정법
+
+#### 🔷 hyperparameter 조절
+
+hyperparameter 조절 방식은 다음과 같다.
+~~~
+python main.py [데이터셋 폴더 경로] [hyperparameter 수정 옵션]
+~~~
+예시 코드는 다음과 같다.
+~~~
+python main.py data/sample-classification --epochs 1200 --n-conv 5 --lr 0.03 
+~~~
+
+#### 🔷 node vector 조절
+
+#### 🔷 edge vector 조절
+
+
 
 ## 📌 Training by txie-93 github dataset
 
@@ -286,7 +305,3 @@ python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/data_regress
 ~~~
 python draw_graph.py
 ~~~
-
-## 📌 훈련된 CGCNN 모델을 가지고 물성 예측
-
-
