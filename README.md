@@ -1,4 +1,4 @@
-# 🖥️ CGCNN-tutorial
+# 🖥️ CGCNN hands-on tutorial
 CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재 물성 예측용 그래프 신경망 네트워크 모델로, 다음 논문에 자세히 설명되어 있다.
 
 <https://doi.org/10.1103/PhysRevLett.120.145301>
