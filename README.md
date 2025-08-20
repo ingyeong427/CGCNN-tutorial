@@ -292,7 +292,7 @@ txie-93 github에서 제공하는 샘플 데이터셋은 크기가 매우 작기
 훈련은 이전에 진행한 것과 동일한 방식으로 진행하면 된다.
 
 ~~~
-python main.py --train-size 0.6 --val-size 0.2 --test-size 0.2 data/data_regression_formE_1000
+python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/data_regression_formE_1000
 ~~~
 
 그래프를 그리는 코드 또한 동일하다.
