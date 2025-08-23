@@ -362,6 +362,9 @@ python draw_graph.py
   
 ### **2. train_results.csv**
 60%:20%:20%으로 나눠놓은 dataset 중 train set인 60%에 해당하는 데이터셋의 훈련 결과 파일.
+
+<img src = "https://github.com/user-attachments/assets/8f0a229d-bebf-4502-bbe2-4aafb40590c8" width="20%" height="20%">
+
 - `A열` : 재료의 ID
 - `B열` : target property(실제 물성값)
 - `C열` : 모델이 예측한 물성값
