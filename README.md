@@ -453,3 +453,4 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 <img width="1861" height="105" alt="Image" src="https://github.com/user-attachments/assets/811d0842-7e85-4ada-8c73-47f9555108b4" />
 
+[Accu, Precision, Recall, F1, AUC](https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall?hl=ko)에 대한 용어 설명은 링크를 참조하면 된다.
