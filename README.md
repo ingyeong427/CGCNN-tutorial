@@ -1,7 +1,7 @@
 # 🖥️ CGCNN hands-on tutorial
 CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재 물성 예측용 그래프 신경망 모델로, 이론적 배경은 다음 논문에 자세히 설명되어 있다.
 
-- T. Xie and J. C. Grossman, *Crystal graph convolutional neural networks for an accurate and interpretable prediction of material properties*, Physical Review Letters 120,145301 (2018). <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301>
+- T. Xie and J. C. Grossman, *Crystal graph convolutional neural networks for an accurate and interpretable prediction of material properties*, Physical Review Letters 120,145301 (2018). [Article](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301)
 
 
 이 논문에서 다루고 있는 모델의 실습 코드는 <https://github.com/txie-93/cgcnn?tab=readme-ov-file>에서 다운받을 수 있다.
