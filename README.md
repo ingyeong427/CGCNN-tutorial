@@ -353,13 +353,16 @@ python draw_graph.py
 
 ### 🔷 Output 파일 해석법
 ### **1. epoch_loss.csv**
+머신러닝에서 학습은 한 번만 하는 것이 아니라, 정해진 횟수(epoch)만큼 반복되어 진행된다. 매 epoch 마다 계산되는 train/validation loss 값들을 저장한 것이 바로 `epoch_loss.csv` 파일이다.
 
-실행 로그에 나오는 Loss 값 중 괄호 안의 값은 현재 돌리고 있는 batch의 loss 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 loss 값을 평균낸 값.
 <img width="1841" height="176" alt="image" src="https://github.com/user-attachments/assets/50388e8e-6e1a-4096-9f53-091856d3553d" />
 
-`epoch_loss.csv` 파일에 나오는 loss 값은 train set과 validation set의 매 epoch마다의 평균 loss 값. (=각 epoch에 해당하는 전체 batch의 평균 loss 값)
+실행 로그에 나오는 Loss 값 중 괄호 안의 값은 현재 돌리고 있는 batch의 loss 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 loss 값을 평균낸 값이다.
 
 <img src = "https://github.com/user-attachments/assets/f8456b4a-d4cd-4ee8-bacc-cc6e4a3a4524" width="20%" height="20%">
+
+매 epoch마다 train dataset으로 학습이 이루어지고, 이어서 validation dataset으로 검증이 수행된다. `epoch_loss.csv` 파일에 기록된 loss 값은 각 epoch에서의 train set과 validation set의 평균 loss를 의미하며, 이는 해당 epoch를 이루는 전체 batch의 loss를 평균낸 값이다.
+
   
 ### **2. train_results.csv**
 train set : validation set : test set으로 나눠놓은 데이터셋 중 train set의 훈련 결과 파일.
