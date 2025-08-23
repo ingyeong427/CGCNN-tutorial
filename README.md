@@ -380,9 +380,8 @@ python draw_graph.py
 - `B열` : target property (실제 물성값)
 - `C열` : 모델이 예측한 물성값
 
-<img width="1382" height="100" alt="image" src="https://github.com/user-attachments/assets/083c0cc3-80aa-4fbc-a3e1-49d6003a0f1f" />
 
-실행 로그에 나오는 MAE 값은 다음과 같은 과정으로 구해진다. 
+'Evaluate Model on Train Set' 실행 로그에 나오는 1.743의 MAE 값은 다음과 같은 과정으로 구해진다. 
 
 우선 .csv 파일에 나온 값들을 이용하여 다음과 같이 모든 샘플에 대한 오차가 구해진다.
 
