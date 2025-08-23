@@ -361,7 +361,7 @@ python draw_graph.py
 <img src = "https://github.com/user-attachments/assets/f8456b4a-d4cd-4ee8-bacc-cc6e4a3a4524" width="20%" height="20%">
   
 ### **2. train_results.csv**
-train set : validation set : test set으로 나눠놓은 데이터셋 중 train set 데이터셋의 훈련 결과 파일.
+train set : validation set : test set으로 나눠놓은 데이터셋 중 train set의 훈련 결과 파일.
 
 <img src = "https://github.com/user-attachments/assets/8f0a229d-bebf-4502-bbe2-4aafb40590c8" width="20%" height="20%">
 
@@ -370,4 +370,10 @@ train set : validation set : test set으로 나눠놓은 데이터셋 중 train 
 - `C열` : 모델이 예측한 물성값
 
 <img width="1382" height="100" alt="image" src="https://github.com/user-attachments/assets/083c0cc3-80aa-4fbc-a3e1-49d6003a0f1f" />
+~~~
+# 첫 번째 샘플(ID=9011998)의 오차
+= |실제값(B열) - 예측값(C열)|
+= 9 - 7.573993
+= 약 1.43
+~~~
 
