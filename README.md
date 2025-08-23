@@ -437,7 +437,7 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 <img width="1308" height="61" alt="image" src="https://github.com/user-attachments/assets/8ebd8481-695a-4e5f-9f7a-756afa308195" />
 
-MAE를 구하는 법은 Training 결과 해석법과 동일하다.
+`.csv`파일의 값들을 통해 MAE를 구하는 법은 상단의 Training 결과 해석법과 동일하다.
 
 #### **2. test_results.csv (classification)**
 
@@ -445,4 +445,11 @@ MAE를 구하는 법은 Training 결과 해석법과 동일하다.
 
 이번에는 미리 훈련된 `pre-trained` 폴더 내의 모델을 가지고 `sample-classification` 폴더에 있는 재료들을 metal은 (1), non_metal은 (0)으로 분류할 것이다.
 
+`test_results.csv` 파일에는 `sample-classification` 폴더에 있던 10개 재료 각각의 
+
+<img width="353" height="666" alt="image" src="https://github.com/user-attachments/assets/2bb0c44c-2aae-4b89-a850-4cb0db510bbf" />
+
+코드 실행 로그는 다음과 같다.
+
 <img width="1861" height="105" alt="Image" src="https://github.com/user-attachments/assets/811d0842-7e85-4ada-8c73-47f9555108b4" />
+
