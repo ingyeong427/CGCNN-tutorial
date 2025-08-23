@@ -353,7 +353,7 @@ python draw_graph.py
 
 ### 🔷 Output 파일 해석법
 
-**실행 코드 : python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression**
+**- 실행 코드 : python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression**
 
 ### **1. epoch_loss.csv (main.py output)**
 머신러닝에서 학습은 한 번만 하는 것이 아니라, 정해진 횟수(epoch)만큼 반복되어 진행된다. 매 epoch 마다 계산되는 train/validation loss 값들을 저장한 것이 바로 `epoch_loss.csv` 파일이다.
