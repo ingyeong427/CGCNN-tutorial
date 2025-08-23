@@ -12,7 +12,6 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
 Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 
---------------------
 
 # 📑 Table of Contents
 
@@ -31,7 +30,7 @@ Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다
 - [Predicting by txie-93 github dataset](#-predicting-by-txie-93-github-dataset)
 - [Training by google drive dataset](#-training-by-google-drive-dataset)
 
---------------------
+
 
 ## 📌 프로그램 설치 및 환경설정
 **CGCNN 실습은 Conda를 이용해 진행된다. 
