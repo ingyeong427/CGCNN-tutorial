@@ -355,3 +355,5 @@ python draw_graph.py
 #### **1. epoch_loss.csv**
 <img width="1841" height="176" alt="image" src="https://github.com/user-attachments/assets/50388e8e-6e1a-4096-9f53-091856d3553d" />
 <img src = "https://github.com/user-attachments/assets/f8456b4a-d4cd-4ee8-bacc-cc6e4a3a4524" width="20%" height="20%">
+- 실행 로그에는 나오는 Loss 값 중 괄호 안의 값은 현재 돌리고 있는 batch의 loss 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 loss 값을 평균낸 값.
+- `epoch_loss.csv` 파일에 나오는 loss 값은 한 epoch (전체 batch)의 평균 loss 값.
