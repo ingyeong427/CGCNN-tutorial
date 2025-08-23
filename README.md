@@ -435,4 +435,6 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 코드 실행 로그는 다음과 같다. 
 
-<img width="1145" height="55" alt="image" src="https://github.com/user-attachments/assets/d539fd5b-8a63-407a-9ab9-6a9907406f25" />
+<img width="1308" height="61" alt="image" src="https://github.com/user-attachments/assets/8ebd8481-695a-4e5f-9f7a-756afa308195" />
+
+
