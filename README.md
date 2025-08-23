@@ -439,10 +439,10 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 MAE를 구하는 법은 Training 결과 해석법과 동일하다.
 
-<img width="893" height="50" alt="image" src="https://github.com/user-attachments/assets/9e9d3c34-671c-4541-88e8-ba926e6d8824" />
-
 #### **2. test_results.csv (classification)**
 
 **(실행 코드 : python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-classification)**
 
 이번에는 미리 훈련된 `pre-trained` 폴더 내의 모델을 가지고 `sample-classification` 폴더에 있는 재료들을 metal은 (1), non_metal은 (0)으로 분류할 것이다.
+
+<img width="1861" height="105" alt="Image" src="https://github.com/user-attachments/assets/811d0842-7e85-4ada-8c73-47f9555108b4" />
