@@ -6,7 +6,8 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 
 해당 논문에서 제공하고 있는 모델의 실습 코드는 [txie-93/github](https://github.com/txie-93/cgcnn?tab=readme-ov-file)에서 다운받을 수 있다.
 
-하지만 위 github의 데이터셋은 크기가 매우 작아 실습을 진행하는 데 부족함이 있기에, KIST 김동훈 박사님이 기존 github 데이터셋에 새로운 dataset과 보조기능 코드를 추가한 google colab 자료를 제공하고 있다. 
+다만, 해당 GitHub에서 제공하는 데이터셋은 규모가 매우 작아 모델 학습 결과를 신뢰하기 어렵고, 실제 응용 연구에 활용하기에도 한계가 있다.
+이러한 제약을 보완하기 위해 KIST 김동훈 박사님은 기존 GitHub 코드에 새로운 대규모 데이터셋과 보조 기능을 추가한 Google Colab 자료를 제공하고 있으며, 본 실습에서는 이를 활용하여 보다 실제적인 모델 학습과 평가를 진행한다.
 
 <https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm>
 
