@@ -18,18 +18,18 @@ Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다
 
 - [프로그램 설치 및 환경설정](#-프로그램-설치-및-환경설정)
 
-- [코드 Framework](#------framework)
-    + [input 파일](#---input---)
-    + [모델 동작 파일](#-------------py----)
-    + [output 파일](#---output---)
-    + [각 폴더 설명](#----------)
-- [각종 parameter 조절법](#------parameter----)
-    + [hyperparameter](#---hyperparameter)
-    + [node feature vector](#---node-feature-vector)
-    + [edge feature vector](#---edge-feature-vector)
-- [Training by txie-93 github dataset](#---training-by-txie-93-github-dataset)
-- [Predicting by txie-93 github dataset](#---predicting-by-txie-93-github-dataset)
-- [Training by google drive dataset](#---training-by-google-drive-dataset)
+- [코드 Framework](#-코드-framework)
+    + [input 파일](#-input-파일)
+    + [모델 동작 파일](#-모델-동작-파일-py-파일)
+    + [output 파일](#-output-파일)
+    + [각 폴더 설명](#-각-폴더-설명)
+- [각종 parameter 조절법](#-각종-parameter-조절법)
+    + [hyperparameter](#-hyperparameter)
+    + [node feature vector](#-node-feature-vector)
+    + [edge feature vector](#-edge-feature-vector)
+- [Training by txie-93 github dataset](#-training-by-txie-93-github-dataset)
+- [Predicting by txie-93 github dataset](#-predicting-by-txie-93-github-dataset)
+- [Training by google drive dataset](#-training-by-google-drive-dataset)
 
 --------------------
 
