@@ -352,7 +352,7 @@ python draw_graph.py
 
 
 ### 🔷 Output 파일 해석법
-#### **1. epoch_loss.csv**
+### **1. epoch_loss.csv**
 실행 로그에 나오는 Loss 값 중 괄호 안의 값은 현재 돌리고 있는 batch의 loss 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 loss 값을 평균낸 값.
 <img width="1841" height="176" alt="image" src="https://github.com/user-attachments/assets/50388e8e-6e1a-4096-9f53-091856d3553d" />
 
@@ -360,3 +360,8 @@ python draw_graph.py
 
 <img src = "https://github.com/user-attachments/assets/f8456b4a-d4cd-4ee8-bacc-cc6e4a3a4524" width="20%" height="20%">
   
+### **2. train_results.csv**
+60%:20%:20%으로 나눠놓은 dataset 중 train set인 60%에 해당하는 데이터셋의 훈련 결과 파일.
+- `A열` : 재료의 ID
+- `B열` : target property(실제 물성값)
+- `C열` : 모델이 예측한 물성값
