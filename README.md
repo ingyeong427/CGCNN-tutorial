@@ -351,7 +351,7 @@ python draw_graph.py
 - `()`: 괄호 안의 값은 현재 돌리고 있는 batch에서 계산된 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 값에 대해 평균낸 값.
 
 
-### 🔷 Output 파일 해석법 
+### 🔷 Output 파일 해석법(Training)
 
 **(실행 코드 : python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression)**
 
@@ -416,18 +416,22 @@ python draw_graph.py
 
 Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 target과 prediction을 정규화한 뒤 계산한 MSE 값이다. 따라서 `.csv` 파일의 값들만으로는 직접 구할 수 없고, `main.py`에서 정의된 정규화 과정에 의해 계산된다.
 
-----------
-
-#### **3. test_results.csv**
+### 🔷 Output 파일 해석법(Prediction)
 
 **(실행 코드 : python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression)**
 
-미리 훈련된 `pre-trained` 모델을 가지고 `sample-regression` 폴더에 있는 원자들의 형성 에너지를 예측해볼 것이다. 
+#### **1. test_results.csv**
 
-실행 로그는 다음과 같다. 
+미리 훈련된 `pre-trained` 폴더 내의 모델을 가지고 `sample-regression` 폴더에 있는 재료들의 원자 당 형성 에너지를 예측해볼 것이다. 
 
-<img width="1145" height="55" alt="image" src="https://github.com/user-attachments/assets/d539fd5b-8a63-407a-9ab9-6a9907406f25" />
+`test_results.csv` 파일에는 `sample-regression` 폴더에 있던 10개 재료들 각각의 원자 당 형성 에너지가 적혀있다.
 
 <img src = "https://github.com/user-attachments/assets/2dbc6a3b-dcac-49f0-9e01-651485b5f8c7" width="20%" height="20%">
 
+- `A열` : 재료의 ID
+- `B열` : target property (실제 물성값)
+- `C열` : 모델이 예측한 물성값
 
+코드 실행 로그는 다음과 같다. 
+
+<img width="1145" height="55" alt="image" src="https://github.com/user-attachments/assets/d539fd5b-8a63-407a-9ab9-6a9907406f25" />
