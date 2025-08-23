@@ -437,4 +437,4 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 <img width="1308" height="61" alt="image" src="https://github.com/user-attachments/assets/8ebd8481-695a-4e5f-9f7a-756afa308195" />
 
-
+MAE를 구하는 법은 Training 결과 해석법과 동일하다.
