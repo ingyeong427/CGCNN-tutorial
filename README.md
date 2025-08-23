@@ -122,39 +122,37 @@ usage: main.py [-h] [--task {regression, classification}]
 
 <img width="1578" height="869" alt="image" src="https://github.com/user-attachments/assets/bd64c46a-0b35-402d-943c-1982a24f756d" />
 
-
-1) 하이퍼파라미터 설정 및 input 파일 구성하기
-2) `main.py` 실행시키면 `id_prop.csv`를 읽어 첫 번째 열인 id의 목록을 얻게 됨.
+1) 하이퍼파라미터 설정 및 input 파일 구성
+2) `main.py` 실행 시 `id_prop.csv`를 읽어 첫 번째 열인 id의 목록 얻음.
 3) `data.py`를 호출하여 `main.py`에서 읽어낸 id 목록을 `data.py`로 넘김. `data.py`는 받은 id 목록에 해당하는 `id.cif` 파일을 찾음.
 4) `id.cif`으로부터 얻은 결정구조는 `atom_init.json` 파일을 바탕으로 벡터화된 그래프 형태로 나타내어짐.
 5) `data.py`에서 벡터화된 그래프는 다시 `main.py`로 반환됨. 이후 `id_prop.csv`에 따라 벡터화된 결정구조 그래프와 물성이 매칭됨.
 6) `main.py`는 하이퍼파라미터와 벡터화된 그래프 데이터를 `model.py`로 전송.
-7) `model.py`는 모델의 CNN 구조를 구축한 후에 다시 `main.py`로 반환.
-8) 정해진 epoch 횟수만큼 `main.py`을 통해 훈련 후, 훈련 결과 데이터 생성됨.
+7) `model.py`는 모델의 CNN 구조를 구축 후, 다시 `main.py`로 반환.
+8) 정해진 epoch 만큼 `main.py`을 통해 훈련.
 9) 훈련된 모델을 가지고 `predict.py` 진행 시, 예측 결과 데이터 생성됨.
 
 ------------------------
 
-### 🔷 input 파일
+### 🔷 Input 파일
 
-Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, 우선 필요한 데이터들을 하나의 폴더로 묶어야 한다. (customized dataset)
+CGCNN 모델을 학습(Training)과 예측(Prediction)에 활용하려면, 필요한 데이터들을 하나의 폴더로 구성해두어야 한다. (customized dataset)
 
-실습 파일 중에서는 sample-classification과 sample-regression이 customized dataset에 해당한다.
+실습 파일 중에서는 'sample-classification'과 'sample-regression' 폴더가 customized dataset에 해당한다.
 
-모델에 input으로 들어가는 customized dataset에는 다음 파일들이 포함되어야 한다.
-
+customized dataset 폴더에는 다음 파일들이 포함되어야 한다.
 
 - `id_prop.csv` : id와 property를 묶은 csv 파일로 1열에는 id, 2열에는 property가 적혀있다.
   
-    - `id` : 각 결정구조마다 번호를 부여해준 것. (ex. cubic 구조의 SiO2 id는 8352)
+    - `id` : 각 결정구조마다 고유의 번호를 부여해준 것. (ex. cubic 구조의 SiO2 id는 8352)
   
-    - `property` : 물성값(ex. bandgap, formation energy)을 의미.
+    - `property` : 물성값(ex. bandgap, formation energy).
 
-       (Training 시)  재료의 실제 물성값을 입력해줘야 한다.
+       (Training 시)  재료의 실제 물성값 입력.
       
-       (Predicting 시) 모델의 예측 성능을 평가하는 경우에는 실제 물성값을 입력해주어야 한다.
+       (Prediction 시) 모델의 예측 성능을 평가하는 경우에는 실제 물성값 입력.
 
-      예측만 하는 경우에는 실제 물성값이 필요 없으나, 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로 아무 숫자(dummy)를 넣어서 형식을 맞춰주어야 한다.     
+       단순히 예측만 하는 경우에는 실제 물성값이 필요 없으나, 2열을 비워둘 시 코드가 파일을 제대로 읽지 못하므로 아무 숫자(dummy)를 넣어서 형식을 맞춰주어야 함.   
   
 - `id.cif` : 결정구조에 대한 정보를 담고 있는 파일로, 결정의 물리적 특성, 좌표, 격자 등에 관한 정보를 알려준다.
 
@@ -172,7 +170,7 @@ Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, �
 
 `.py` 파일은 마치 레시피라고 생각하면 된다. 우리가 레시피를 보고 요리하듯이, `.py` 파일의 코드를 실행시킴으로써 모델을 작동시키는 것이다.
 
-- `main.py` : 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는 CGCNN의 핵심 동작 파일로, `data.py`와 `model.py`를 연결해 train/predict를 수행한다.
+- `main.py` : 결정구조(id)를 input으로 받아 물성(property)을 output으로 내놓는 CGCNN의 핵심 동작 파일로, `data.py`와 `model.py`를 연결해 학습과 예측을 수행한다.
   
 - `data.py` : id를 input으로 받아 벡터화된 그래프를 output으로 내놓는다.
   
@@ -182,15 +180,15 @@ Training과 Predicting을 위해 CGCNN 모델에 데이터를 입력하려면, �
 - `predict.py` : 완성된 모델을 이용해 물성을 예측한다.
 - `draw_graph.py` : 학습/예측 결과를 그래프로 나타내준다.
 
-### 🔷 output 파일
-- Training 결과 파일
+### 🔷 Output 파일
+- 학습 결과 파일
   - `checkpoint.pth.tar` : 학습 중간 저장용 파일로, 마지막 epoch 모델 저장.
   - `model_best.pth.tar` : validation accuracy가 가장 높았던 모델 저장.
-  - `epoch_loss.csv` : 각 epoch 마다의 훈련 loss값 기록.
-  - `train_result.csv`, `validation_result.csv`, `test_result.csv` : train/validation/test set에서의 각 샘플별 예측 결과 기록.
+  - `epoch_loss.csv` : 각 epoch 마다의 train/validation loss값 기록.
+  - `train_result.csv`, `validation_result.csv`, `test_result.csv` : train/validation/test set에서의 각 재료별 실제/예측 물성값 기록.
   - `draw_graph.py` 실행 시 `epoch_loss.png`, `target_pred_test/train/validation.png` 파일 생성됨.
     
-- Prediction 결과 파일
+- 예측 결과 파일
   - `test_result.csv` : test set으로 예측한 결과를 기록한 파일로 각 결정의 ID, 목표값(id_prop.csv 파일에서 넣어준 prop 값), 예측값(CGCNN이 예측한 값) 저장.
 
 ### 🔷 각 폴더 설명
