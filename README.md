@@ -447,7 +447,7 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 `test_results.csv` 파일에는 `sample-classification` 폴더에 있던 10개 재료 각각의 
 
-<img width="353" height="666" alt="image" src="https://github.com/user-attachments/assets/2bb0c44c-2aae-4b89-a850-4cb0db510bbf" />
+<img src = "https://github.com/user-attachments/assets/e0c6210d-1650-40cc-8586-f602d138e422" width="20%" height="20%">
 
 코드 실행 로그는 다음과 같다.
 
