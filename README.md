@@ -34,7 +34,8 @@ Google Drive의 데이터는 전부 다운로드 후 압축 해제하면 된다.
   + [Training (with customized dataset)](#-training-with-customized-dataset)
 - [결과 해석 방법](#-결과-해석-방법)
   + [로그 출력 용어 정리](#-로그-출력-용어-정리)
-  + [Output 파일 해석법](#-output-파일-해석법)
+  + [Training Output 파일 해석법](#-training-output-파일-해석법)
+  + [Prediction Output 파일 해석법](#-prediction-output-파일-해석법)
 
 
 ## 📌 프로그램 설치 및 환경설정
@@ -351,7 +352,7 @@ python draw_graph.py
 - `()`: 괄호 안의 값은 현재 돌리고 있는 batch에서 계산된 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 값에 대해 평균낸 값.
 
 
-### 🔷 Output 파일 해석법(Training)
+### 🔷 Training Output 파일 해석법
 
 **(실행 코드 : python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression)**
 
@@ -416,7 +417,7 @@ python draw_graph.py
 
 Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 target과 prediction을 정규화한 뒤 계산한 MSE 값이다. 따라서 `.csv` 파일의 값들만으로는 직접 구할 수 없고, `main.py`에서 정의된 정규화 과정에 의해 계산된다.
 
-### 🔷 Output 파일 해석법(Prediction)
+### 🔷 Prediction Output 파일 해석법
 
 **(실행 코드 : python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression)**
 
@@ -424,7 +425,7 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 미리 훈련된 `pre-trained` 폴더 내의 모델을 가지고 `sample-regression` 폴더에 있는 재료들의 원자 당 형성 에너지를 예측해볼 것이다. 
 
-`test_results.csv` 파일에는 `sample-regression` 폴더에 있던 10개 재료들 각각의 원자 당 형성 에너지가 적혀있다.
+`test_results.csv` 파일에는 `sample-regression` 폴더에 있던 10개 재료 각각의 원자 당 형성 에너지가 적혀있다.
 
 <img src = "https://github.com/user-attachments/assets/2dbc6a3b-dcac-49f0-9e01-651485b5f8c7" width="20%" height="20%">
 
