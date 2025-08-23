@@ -369,11 +369,12 @@ python draw_graph.py
 
 이후 이 best model을 이용해 train, validation, test 데이터셋을 각각 평가하며, 그 결과값들은 `train_results.csv`, `validation_results.csv`, `test_results.csv`파일에 저장된다.
 
-<img width="1531" height="257" alt="image" src="https://github.com/user-attachments/assets/8b33fec4-496e-4e7c-9c35-98176bcc7253" />
+<img width="1531" height="330" alt="image" src="https://github.com/user-attachments/assets/eb706b7b-630d-4721-9c08-afb8c9147b7c" />
 
 세 파일 모두 데이터가 저장되는 형식은 동일하기에, 대표로 `train_results.csv` 파일만 설명할 것이다.
 
 <img src = "https://github.com/user-attachments/assets/8f0a229d-bebf-4502-bbe2-4aafb40590c8" width="20%" height="20%">
+
 
 - `A열` : 재료의 ID
 - `B열` : target property (실제 물성값)
