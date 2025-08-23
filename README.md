@@ -31,7 +31,7 @@ Google Drive의 데이터는 전부 다운로드 후 압축 해제하면 된다.
 - [Training (with sample dataset)](#-training-with-sample-dataset)
 - [Prediction (with sample dataset)](#-prediction-with-sample-dataset)
 - [Training (with customized dataset)](#-training-with-customized-dataset)
-
+- [결과 해석 방법](#-결과-해석-방법법)
 
 
 ## 📌 프로그램 설치 및 환경설정
@@ -326,3 +326,20 @@ python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/data_regr
 ~~~
 python draw_graph.py
 ~~~
+
+## 📌 결과 해석 방법
+
+### **1. 로그 출력 용어 정리**
+
+<img width="1841" height="102" alt="image" src="https://github.com/user-attachments/assets/c88e20a6-d071-47d7-9dd5-3fe3b1d3570c" />
+
+- `epoch` : 학습을 반복하는 횟수로, train set을 전부 학습하는 한 번의 루프가 한 번의 epoch에 해당.
+- `batch` : dataset을 모델에 입력할 때 나누는 묶음의 수. 보통 dataset을 한 번에 입력하지 않고, 여러 batch로 나눈 후 순차적으로 투입함.
+- Data : 각 batch에 해당하는 데이터를 불러오는 데 걸린 시간.
+- `Time` : 데이터 로딩 시간을 포함해 각 batch를 학습하는 데 걸린 시간.
+- `Loss` : 모델이 예측한 값과 실제 값의 차이를 ‘수치’로 나타낸 것.
+- `MAE` : 모델 예측값과 실제값의 차이의 절댓값을 평균낸 값.
+
+
+
+
