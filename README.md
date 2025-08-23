@@ -370,7 +370,7 @@ python draw_graph.py
 이후 이 best model을 이용해 train, validation, test 데이터셋을 각각 평가하며, 그 결과값들은 `train_results.csv`, `validation_results.csv`, `test_results.csv`파일에 저장된다.
 각 데이터셋의 평과 결과에 대한 실행 로그는 다음과 같다.
 
-<img width="1531" height="330" alt="image" src="https://github.com/user-attachments/assets/eb706b7b-630d-4721-9c08-afb8c9147b7c" />
+<img width="1147" height="252" alt="image" src="https://github.com/user-attachments/assets/4541434e-9f31-483a-af59-9e63c1e3d02d" />
 
 세 파일 모두 데이터가 저장되는 형식은 동일하기에, 대표로 `train_results.csv` 파일만 설명할 것이다.
 
@@ -383,7 +383,7 @@ python draw_graph.py
 
 <img width="1382" height="100" alt="image" src="https://github.com/user-attachments/assets/083c0cc3-80aa-4fbc-a3e1-49d6003a0f1f" />
 
-실행 로그에 나오는 MAE와 Loss 값은 다음과 같은 과정으로 구해진다. 
+실행 로그에 나오는 MAE 값은 다음과 같은 과정으로 구해진다. 
 
 우선 .csv 파일에 나온 값들을 이용하여 다음과 같이 모든 샘플에 대한 오차가 구해진다.
 
@@ -406,6 +406,9 @@ python draw_graph.py
 .
 ~~~
 
-이 오차들에 절댓값을 씌운 후 평균낸 값이 MAE 값이고, 각 오차를 제곱하여 평균낸 값이 Loss 값이다.
+이 오차들에 절댓값을 씌운 후 평균낸 값이 MAE 값이다. 
 
-### **2. validation_results.csv**
+Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 target과 prediction을 정규화한 뒤 계산한 MSE 값이다.
+
+따라서 `.csv` 파일의 값들만으로는 직접 구할 수 없고, `main.py`에서 정의된 정규화 과정에 의해 계산된다.
+
