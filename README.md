@@ -426,6 +426,6 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 <img width="1145" height="55" alt="image" src="https://github.com/user-attachments/assets/d539fd5b-8a63-407a-9ab9-6a9907406f25" />
 
-<img src = "<img width="358" height="672" alt="Image" src="https://github.com/user-attachments/assets/2dbc6a3b-dcac-49f0-9e01-651485b5f8c7" />" width="20%" height="20%">
+<img src = "https://github.com/user-attachments/assets/2dbc6a3b-dcac-49f0-9e01-651485b5f8c7" width="20%" height="20%">
 
 
