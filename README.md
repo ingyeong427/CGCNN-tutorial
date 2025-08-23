@@ -33,6 +33,8 @@ Google Drive의 데이터는 전부 다운로드 후 압축 해제하면 된다.
   + [Prediction (with sample dataset)](#-prediction-with-sample-dataset)
   + [Training (with customized dataset)](#-training-with-customized-dataset)
 - [결과 해석 방법](#-결과-해석-방법)
+  + [로그 출력 용어 정리](#-로그-출력-용어-정리)
+  + [Output 파일 해석법](#-ouput-파일-해석법)
 
 
 ## 📌 프로그램 설치 및 환경설정
@@ -207,7 +209,7 @@ customized dataset 폴더에는 다음 파일들이 포함되어야 한다.
 
 ## 📌 각종 parameter 조절법
 
-#### 🔷 hyperparameter
+### 🔷 hyperparameter
 
 hyperparameter 조절 방식은 다음과 같다.
 ~~~
@@ -218,7 +220,7 @@ python main.py [데이터셋 폴더 경로] [hyperparameter 수정 옵션]
 python main.py data/sample-classification --epochs 1200 --n-conv 5 --lr 0.03 
 ~~~
 
-#### 🔷 node feature vector
+### 🔷 node feature vector
 
 node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 있다.
   
@@ -239,7 +241,7 @@ features = ['group', 'd-electron', 'volume', 'affinity', 'weight']
 
 `encoding_feature_num.py`가 수정되면 자동으로 `atom_init.json` 파일도 덮어쓰기 모드로 수정되어 node vector가 조절된다.
 
-#### 🔷 edge feature vector
+### 🔷 edge feature vector
 
 `data.py` 파일을 수정하면 edge vector를 조절할 수 있다. 
 
@@ -332,7 +334,7 @@ python draw_graph.py
 
 ## 📌 결과 해석 방법
 
-### **1. 로그 출력 용어 정리**
+### 🔷 로그 출력 용어 정리
 
 <img width="1841" height="102" alt="image" src="https://github.com/user-attachments/assets/c88e20a6-d071-47d7-9dd5-3fe3b1d3570c" />
 
@@ -349,5 +351,5 @@ python draw_graph.py
 - `()`: 괄호 안의 값은 현재 돌리고 있는 batch에서 계산된 값이고, 괄호 앞의 값은 지금까지 진행한 batch들의 값에 대해 평균낸 값.
 
 
-### **2. Output 파일 해석법**
+### 🔷 Output 파일 해석법
 
