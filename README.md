@@ -365,9 +365,11 @@ python draw_graph.py
 
   
 ### **2. train_results.csv / validation_results.csv / test_results.csv**
-입력 데이터셋은 train set, validation set, test set으로 나눠서 사용하였다. 정해진 epoch만큼 학습이 진행되었다면, 가장 성능이 우수한 모델이 `model_best.pth.tar' 파일로 저장된다. 
+입력 데이터셋은 train set, validation set, test set으로 나눠서 사용하였다. 정해진 epoch만큼 학습이 진행되었다면, 가장 성능이 우수한 모델이 `model_best.pth.tar` 파일로 저장된다. 
 
 이후 이 best model을 이용해 train, validation, test 데이터셋을 각각 평가하며, 그 결과값들은 `train_results.csv`, `validation_results.csv`, `test_results.csv`파일에 저장된다.
+
+세 파일 모두 데이터가 저장되는 형식은 동일하기에, 대표로 `train_results.csv` 파일만 설명할 것이다.
 
 <img src = "https://github.com/user-attachments/assets/8f0a229d-bebf-4502-bbe2-4aafb40590c8" width="20%" height="20%">
 
