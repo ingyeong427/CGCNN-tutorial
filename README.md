@@ -28,9 +28,10 @@ Google Drive의 데이터는 전부 다운로드 후 압축 해제하면 된다.
     + [hyperparameter](#-hyperparameter)
     + [node feature vector](#-node-feature-vector)
     + [edge feature vector](#-edge-feature-vector)
-- [Training (with sample dataset)](#-training-with-sample-dataset)
-- [Prediction (with sample dataset)](#-prediction-with-sample-dataset)
-- [Training (with customized dataset)](#-training-with-customized-dataset)
+- [실습 코드](#-실습-코드)
+  + [Training (with sample dataset)](#-training-with-sample-dataset)
+  + [Prediction (with sample dataset)](#-prediction-with-sample-dataset)
+  + [Training (with customized dataset)](#-training-with-customized-dataset)
 - [결과 해석 방법](#-결과-해석-방법)
 
 
@@ -260,7 +261,9 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
              random_seed=123):
 ~~~
 
-## 📌 Training (with sample dataset)
+## 📌 실습 코드
+
+### 🔷 Training (with sample dataset)
 
 우선 sample-regression 폴더 혹은 sample-classification에 있는 데이터셋을 가지고 훈련해볼 것이다. 
 
@@ -292,7 +295,7 @@ python draw_graph.py
 ~~~
 생성된 그래프들은 cgcnn-master 폴더에 png 파일로 저장된다.
 
-## 📌 Prediction (with sample dataset)
+### 🔷 Prediction (with sample dataset)
 
 예측은 `predict.py` 코드를 이용하여 진행된다. 이 튜토리얼에서는 논문에 나오는 미리 훈련된 모델인 `pre-trained` dataset을 활용할 것이다. 'pre-trained' 폴더 내에서도 예측하고자 하는 물성에 따라 해당하는 폴더를 사용하면 된다.
 
@@ -310,7 +313,7 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 예측에 대한 결과 데이터들은 `test_results.csv` 파일로 저장된다.
 
-## 📌 Training (with customized dataset)
+### 🔷 Training (with customized dataset)
 
 위에서의 훈련/예측에 사용된 sample dataset은 크기가 매우 작기 때문에, 모델이 학습할 수 있는 데이터의 다양성이 제한된다. 예측 성능 또한 신뢰할 수 없기 때문에 이번에는 더 많은 데이터셋(customized dataset)을 이용해 보다 의미 있는 훈련/예측을 진행하고자 한다.
 
