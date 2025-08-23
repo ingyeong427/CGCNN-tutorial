@@ -355,7 +355,7 @@ python draw_graph.py
 
 **(실행 코드 : python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression)**
 
-#### **1. epoch_loss.csv **
+#### **1. epoch_loss.csv**
 머신러닝에서 학습은 한 번만 하는 것이 아니라, 정해진 횟수(epoch)만큼 반복되어 진행된다. 매 epoch 마다 계산되는 train/validation loss 값들을 저장한 것이 바로 `epoch_loss.csv` 파일이다.
 
 <img width="1841" height="176" alt="image" src="https://github.com/user-attachments/assets/50388e8e-6e1a-4096-9f53-091856d3553d" />
@@ -367,7 +367,7 @@ python draw_graph.py
 매 epoch마다 train dataset으로 학습이 이루어지고, 이어서 validation dataset으로 검증이 수행된다. `epoch_loss.csv` 파일에 기록된 loss 값은 각 epoch에서의 train set과 validation set의 평균 loss를 의미하며, 이는 해당 epoch를 이루는 전체 batch의 loss를 평균낸 값이다.
 
   
-#### **2. train_results.csv / validation_results.csv / test_results.csv **
+#### **2. train_results.csv / validation_results.csv / test_results.csv**
 입력 데이터셋은 train set, validation set, test set으로 나눠서 사용하였다. 정해진 epoch만큼 학습이 진행되었다면, 가장 성능이 우수한 모델이 `model_best.pth.tar` 파일로 저장된다. 
 
 이후 이 best model을 이용해 train, validation, test 데이터셋을 각각 평가하며, 그 결과값들은 `train_results.csv`, `validation_results.csv`, `test_results.csv`파일에 저장된다.
@@ -416,6 +416,14 @@ python draw_graph.py
 
 Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 target과 prediction을 정규화한 뒤 계산한 MSE 값이다. 따라서 `.csv` 파일의 값들만으로는 직접 구할 수 없고, `main.py`에서 정의된 정규화 과정에 의해 계산된다.
 
-#### **3. test_results.csv **
+#### **3. test_results.csv**
 
 **(실행 코드 : python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression)**
+
+미리 훈련된 `pre-trained` 모델을 가지고 `sample-regression` 폴더에 있는 원자들의 형성 에너지를 예측해볼 것이다. 
+
+실행 로그는 다음과 같다. 
+
+<img width="1145" height="55" alt="image" src="https://github.com/user-attachments/assets/d539fd5b-8a63-407a-9ab9-6a9907406f25" />
+
+
