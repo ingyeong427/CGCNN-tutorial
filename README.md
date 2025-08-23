@@ -314,7 +314,7 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 위에서의 훈련/예측에 사용된 sample dataset은 크기가 매우 작기 때문에, 모델이 학습할 수 있는 데이터의 다양성이 제한된다. 예측 성능 또한 신뢰할 수 없기 때문에 이번에는 더 많은 데이터셋(customized dataset)을 이용해 보다 의미 있는 훈련/예측을 진행하고자 한다.
 
-`data` 폴더에 들어있는 'data_' 이름의 하위 폴더들이 전부 customized dataset에 해당한다. 폴더명에는 각각 훈련유형과 물성, 사용하는 cif 파일의 개수가 쓰여있다. 참고로 bandgap 학습용 데이터셋은 metal과 non-metal의 cif 파일 개수가 1:1 비율로 구성되어 있다.
+`data` 폴더에 들어있는 'data_' 이름의 하위 폴더들이 전부 customized dataset에 해당한다. 폴더명에는 각각 훈련 유형과 물성, 사용하는 cif 파일의 개수가 쓰여있다. 참고로 bandgap 학습용 데이터셋은 metal과 non-metal의 cif 파일 개수가 1:1 비율로 구성되어 있다.
   
 훈련은 이전에 진행한 것과 동일한 방식으로 진행하면 된다.
 
