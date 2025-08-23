@@ -10,14 +10,14 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 이러한 제약을 보완하기 위해 KIST 김동훈 박사님은 기존 GitHub 코드에 새로운 대규모 데이터셋과 보조 기능을 추가한 [Google Drive](https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm) 자료를 제공하고 있으며, 본 실습에서는 이를 활용하여 보다 실제적인 모델 학습과 평가를 진행한다.
 
 이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
-제공하는 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 
 
 
 
 ## 📌 프로그램 설치 및 환경설정
-**CGCNN 실습을 위해서는 우리가 만들어 놓은 가상환경 안에 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치해줘야 한다.
-우선 conda 자체를 최신 버전으로 업데이트 하고, 가상환경을 만들어준 뒤 그 안에 패키지를 설치할 것이다.**
+**CGCNN 실습은 Conda를 이용해 진행된다. 
+우선 [Conda 설치](https://docs.conda.io/en/latest/) 후 최신 버전으로 업데이트 하고, 가상환경을 만들어준 뒤 그 안에 PyTorch, scikit-learn, pymatgen이라는 세 패키지를 설치할 것이다.**
 
 
 ### **1. conda 업데이트**
