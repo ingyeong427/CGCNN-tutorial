@@ -260,7 +260,7 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
              random_seed=123):
 ~~~
 
-## 📌 Model Training (sample dataset)
+## 📌 Training (with sample dataset)
 
 우선 sample-regression 폴더에 있는 적은 수의 데이터를 가지고 훈련해볼 것이다. 
 
@@ -292,7 +292,7 @@ python draw_graph.py
 ~~~
 생성된 그래프들은 cgcnn-master 폴더에 png 파일로 저장된다.
 
-## 📌 Prediction 
+## 📌 Prediction (with sample dataset)
 
 Predicting은 `predict.py` 코드를 이용하여 진행된다. 이 튜토리얼에서는 논문에 나오는 미리 훈련된 모델인 `pre-trained` dataset을 활용할 것이다. 예측하고자 하는 물성에 따라 해당하는 폴더를 사용하면 된다.
 
@@ -310,7 +310,7 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 예측에 대한 결과 데이터들은 `test_results.csv` 파일로 저장된다.
 
-## 📌 Training by google drive dataset
+## 📌 Training (with customized dataset)
 
 txie-93 github에서 제공하는 샘플 데이터셋은 크기가 매우 작기때문에, KIST의 김동훈 박사님이 customized dataset을 구글 드라이브에 제공하고 있다. 
 
