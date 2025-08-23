@@ -416,6 +416,8 @@ python draw_graph.py
 
 Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 target과 prediction을 정규화한 뒤 계산한 MSE 값이다. 따라서 `.csv` 파일의 값들만으로는 직접 구할 수 없고, `main.py`에서 정의된 정규화 과정에 의해 계산된다.
 
+----------
+
 #### **3. test_results.csv**
 
 **(실행 코드 : python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression)**
