@@ -354,8 +354,5 @@ python draw_graph.py
 ### 🔷 Output 파일 해석법
 #### **1. epoch_loss.csv**
 <img width="1841" height="176" alt="image" src="https://github.com/user-attachments/assets/50388e8e-6e1a-4096-9f53-091856d3553d" />
-<img width="376" height="547" alt="image" src="https://github.com/user-attachments/assets/216f1377-d4d7-4f57-8c94-6b38ad6b1c09" />
-
-
-<img src="https://github.com/user-attachments/assets/bd1fec29-dba6-44e0-980e-8a2996e25f51.png" width="415" height="601"/>
+<img width="829" height="1202" alt="Image" src="https://github.com/user-attachments/assets/f8456b4a-d4cd-4ee8-bacc-cc6e4a3a4524" />
 
