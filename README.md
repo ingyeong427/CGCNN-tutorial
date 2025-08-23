@@ -445,7 +445,7 @@ Loss 값은 train/validation/test 데이터셋의 평균과 표준편차로 targ
 
 이번에는 미리 훈련된 `pre-trained` 폴더 내의 모델을 가지고 `sample-classification` 폴더에 있는 재료들을 metal은 (1), non_metal은 (0)으로 분류할 것이다.
 
-`test_results.csv` 파일에는 `sample-classification` 폴더에 있던 10개 재료 각각의 분류값이 적혀있다. 이때, csv 파일에는 0과 1이 아니라 'metal일 확률' 값으로 저장되게 되어있다.
+`test_results.csv` 파일에는 `sample-classification` 폴더에 있던 10개 재료 각각의 분류값이 적혀있다. 이때, 모델이 실제로는 log-softmax 함수를 이용하기 때문에 예측값에는 0과 1이 아니라 'metal일 확률' 값이 저장되도록 되어있다.
 
 <img src = "https://github.com/user-attachments/assets/e0c6210d-1650-40cc-8586-f602d138e422" width="20%" height="20%">
 
