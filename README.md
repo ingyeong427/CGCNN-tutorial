@@ -357,5 +357,5 @@ python draw_graph.py
 <img width="376" height="547" alt="image" src="https://github.com/user-attachments/assets/216f1377-d4d7-4f57-8c94-6b38ad6b1c09" />
 
 
-<img src="https://github.com/user-attachments/assets/2885b2a8-c94c-4ff7-b458-c4f1b3690142.png" width="188" height="274"/>
+<img src="https://github.com/user-attachments/assets/bd1fec29-dba6-44e0-980e-8a2996e25f51.png" width="415" height="601"/>
 
