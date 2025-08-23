@@ -189,19 +189,19 @@ customized dataset 폴더에는 다음 파일들이 포함되어야 한다.
   - `draw_graph.py` 실행 시 `epoch_loss.png`, `target_pred_test/train/validation.png` 파일 생성됨.
     
 - 예측 결과 파일
-  - `test_result.csv` : test set으로 예측한 결과를 기록한 파일로 각 결정의 ID, 목표값(id_prop.csv 파일에서 넣어준 prop 값), 예측값(CGCNN이 예측한 값) 저장.
+  - `test_result.csv` : 학습된 모델을 가지고 실제로 물성을 예측해본 결과를 기록한 파일로 각 결정의 ID, 실제 물성값, 모델 예측값이 저장됨.
 
 ### 🔷 각 폴더 설명
-- `data` : MP에서 가져온 train & predict를 위한 데이터 포함.
-  - `sample-classification`, `sample-regression` : training을 위한 sample customized dataset.
+- `data` : 학습과 예측을 위해 MP에서 가져온 dataset 포함.
+  - `sample-classification`, `sample-regression` : 학습을 위한 sample customized dataset.
 
-  - `data_classification/regression_` : 각 물성값을 훈련하기 위한 데이터셋.
+  - `data_classification/regression_` : 각 물성값을 훈련하기 위한 dataset.
     
 - `node_vector_generation` : node feature vector 수정을 위한 파일 포함.
    
-- `pre-trained` : 논문에서 다루고 있는 pre-trained 모델에 대한 data 포함.
+- `pre-trained` : 논문에서 다루고 있는 pre-trained 모델 포함.
   
-- `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과값.
+- `result` : `data` 폴더에 있는 데이터셋으로 훈련/예측한 결과 데이터.
 
 ## 📌 각종 parameter 조절법
 
@@ -222,7 +222,18 @@ node feature vector에 대한 정보는 `atom_init.json` 파일에 저장되어 
   
 만일 node feature vector를 조절하고 싶다면, `encoding_feature_num.py`를 수정하면 된다.  
 
-7번째 줄부터 나와있는 feature list 중, 실제로 node feature vector에 활용하고자 하는 feature들을 선택해 12번째 줄의 feature set에 입력하면 된다.
+7번째 줄부터 나와있는 feature list 중, 
+~~~
+feature_list = {'group' : 18, 'period' : 9, 'electronegativity' : 10, 'ionization' : 10, 'affinity':10,        
+                'volume' :  10, 'radius' : 10, 'weight' : 10, 'melting' : 10, 'boiling' : 10,\
+                'density' : 10, 'Zeff' : 10, 'polarizability' : 10, 'resistivity' : 10, 'fusion' : 10,
+                'vaporization' : 10, 'atomization' : 10, 'capacity' : 10, 'valence' : 17, 'd-electron':11}
+~~~
+
+실제로 node feature vector에 활용하고자 하는 feature들을 선택해 12번째 줄의 feature set에 입력하면 된다.
+~~~
+features = ['group', 'd-electron', 'volume', 'affinity', 'weight']     
+~~~
 
 `encoding_feature_num.py`가 수정되면 자동으로 `atom_init.json` 파일도 덮어쓰기 모드로 수정되어 node vector가 조절된다.
 
