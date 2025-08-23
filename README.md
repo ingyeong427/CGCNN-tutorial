@@ -72,7 +72,7 @@ pip install scikit-learn
 # Pymatgen 설치
 pip install pymatgen
 ~~~
-`pip list`를 입력했을 때, 리스트에 세 패키지가 포함되어 있다면 성공적으로 설치된 이다.
+`pip list`를 입력했을 때, 리스트에 세 패키지가 포함되어 있다면 성공적으로 설치된 것이다.
 
 이제 구글 드라이브에서 다운받았던 파일이 있는 경로로 이동해줘야 한다.
 컴퓨터 상에서 구글 드라이브 폴더를 우클릭 하고 속성에 들어가면, 다음과 같이 파일 경로가 나온다.
@@ -81,7 +81,7 @@ pip install pymatgen
 C:\Users\ingyeong\Desktop\Summer
 ~~~
 
-conda 내에서 이 파일에 접근하기 위해 prompt에 다음과 같이 경로를 입력해준다.
+conda 내에서 이 파일에 접근하기 위해, prompt에 다음과 같이 경로를 입력해준다.
 ~~~
 cd Desktop/Summer/cgcnn-master
 ~~~
