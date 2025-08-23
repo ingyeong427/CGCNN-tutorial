@@ -10,7 +10,7 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 이러한 제약을 보완하기 위해 KIST 김동훈 박사님은 기존 GitHub 코드에 새로운 대규모 데이터셋과 보조 기능을 추가한 [Google Drive](https://drive.google.com/drive/folders/1HbxgZYCAJWynwFCwgWxfeg4-SrlWs0Gm) 자료를 제공하고 있으며, 본 실습에서는 이를 활용하여 보다 실제적인 모델 학습과 평가를 진행한다.
 
 이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
-Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
+Google Drive의 데이터는 전부 다운로드 후 압축 해제하면 된다. 
 
 
 
@@ -262,11 +262,11 @@ def __init__(self, root_dir, max_num_nbr=12, radius=8, dmin=0, step=0.2,
 
 ## 📌 Training (with sample dataset)
 
-우선 sample-regression 폴더에 있는 적은 수의 데이터를 가지고 훈련해볼 것이다. 
+우선 sample-regression 폴더 혹은 sample-classification에 있는 데이터셋을 가지고 훈련해볼 것이다. 
 
-단지 코드 동작을 확인하기 위해 구성해놓은 dataset이기 때문에, sample-regression과 sample-classification 폴더에 있는 id_prop.csv 파일의 prop 값들은 실제 물성값이 아닌 dummy 값이다.
+단지 코드 동작을 확인하기 위한 정도로 구성해놓은 적은 수의 데이터셋이기 때문에, 폴더에 있는 id_prop.csv 파일의 property 값들은 실제 물성값이 아닌 dummy 값이다.
 
-main.py는 'cgcnn-master' 폴더에 들어있기 때문에 다음과 같이 이 폴더의 경로에서 시작해야 한다.
+main.py는 'cgcnn-master' 폴더에 들어있기 때문에 이 폴더의 경로에서 시작해야 한다.
 
 ~~~
 (cgcnn) C:\Users\ingyeong\Desktop\Summer\cgcnn-master>
@@ -286,7 +286,7 @@ python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
 
 훈련이 끝나면 cgcnn-master 폴더에 `checkpoint.pth.tar`, `model_best.pth.tar`, 그리고 각종 `.csv`파일들이 저장된다. 
 
-이 결과들에 대해서 그래프를 그리고 싶다면, 다음 코드를 실행시키면 된다.
+이 결과들을 그래프로 나타내고 싶다면, 다음 코드를 실행시키면 된다.
 ~~~
 python draw_graph.py
 ~~~
@@ -294,9 +294,9 @@ python draw_graph.py
 
 ## 📌 Prediction (with sample dataset)
 
-Predicting은 `predict.py` 코드를 이용하여 진행된다. 이 튜토리얼에서는 논문에 나오는 미리 훈련된 모델인 `pre-trained` dataset을 활용할 것이다. 예측하고자 하는 물성에 따라 해당하는 폴더를 사용하면 된다.
+예측은 `predict.py` 코드를 이용하여 진행된다. 이 튜토리얼에서는 논문에 나오는 미리 훈련된 모델인 `pre-trained` dataset을 활용할 것이다. 'pre-trained' 폴더 내에서도 예측하고자 하는 물성에 따라 해당하는 폴더를 사용하면 된다.
 
-예를 들어 `sample-regression` 폴더에 있는 결정의 formation energy를 예측하고 싶다면, 다음과 같이 코드를 작성하면 된다.
+예를 들어 'pre-trained' 모델을 가지고 `sample-regression` 폴더에 있는 결정의 formation energy를 예측하고 싶다면, 다음과 같이 코드를 작성하면 된다.
 
 ~~~
 python predict.py pre-trained/formation-energy-per-atom.pth.tar. data/sample-regression
@@ -312,11 +312,9 @@ python predict.py pre-trained/semi-metal-classification.pth.tar. data/sample-cla
 
 ## 📌 Training (with customized dataset)
 
-txie-93 github에서 제공하는 샘플 데이터셋은 크기가 매우 작기때문에, KIST의 김동훈 박사님이 customized dataset을 구글 드라이브에 제공하고 있다. 
+위에서의 훈련/예측에 사용된 sample dataset은 크기가 매우 작기 때문에, 모델이 학습할 수 있는 데이터의 다양성이 제한된다. 예측 성능 또한 신뢰할 수 없기 때문에 이번에는 더 많은 데이터셋(customized dataset)을 이용해 보다 의미 있는 훈련/예측을 진행하고자 한다.
 
-`data` 폴더에 들어있는 'data_' 이름의 하위 폴더들이 전부 customized dataset에 해당한다. 
-
-폴더명에는 각각 학습하고자 하는 물성과 cif 파일의 개수가 쓰여있고, bandgap 학습용 데이터셋은 metal과 non-metal의 cif 파일 개수가 1:1 비율로 구성되어 있다.
+`data` 폴더에 들어있는 'data_' 이름의 하위 폴더들이 전부 customized dataset에 해당한다. 폴더명에는 각각 훈련유형과 물성, 사용하는 cif 파일의 개수가 쓰여있다. 참고로 bandgap 학습용 데이터셋은 metal과 non-metal의 cif 파일 개수가 1:1 비율로 구성되어 있다.
   
 훈련은 이전에 진행한 것과 동일한 방식으로 진행하면 된다.
 
