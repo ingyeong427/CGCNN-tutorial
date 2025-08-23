@@ -28,9 +28,9 @@ Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다
     + [hyperparameter](#-hyperparameter)
     + [node feature vector](#-node-feature-vector)
     + [edge feature vector](#-edge-feature-vector)
-- [Training by txie-93 github dataset](#-training-by-txie-93-github-dataset)
-- [Predicting by txie-93 github dataset](#-predicting-by-txie-93-github-dataset)
-- [Training by google drive dataset](#-training-by-google-drive-dataset)
+- [Training (with sample dataset)](#-training-with-sample-dataset)
+- [Prediction (with sample dataset)](#-prediction-with-sample-dataset)
+- [Training (with customized dataset)](#-training-with-customized-dataset)
 
 
 
