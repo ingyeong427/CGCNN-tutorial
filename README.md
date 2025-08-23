@@ -12,8 +12,11 @@ CGCNN은 Jeffrey C. Grossman 교수님과 Tian Xie 박사님이 개발한 소재
 이 튜토리얼은 상단의 dataset을 가지고 진행한 CGCNN 실습을 step-by-step으로 나타낸 것이다.
 Google Drive의 데이터를 전부 다운로드 후, 압축 해제하면 된다. 
 
-- [🖥️ CGCNN hands-on tutorial](#----cgcnn-hands-on-tutorial)
-  * [📌 프로그램 설치 및 환경설정](#-----------------)
+--------------------
+
+# 📑 Table of Contents
+
+- [📌 프로그램 설치 및 환경설정](#-----------------)
     + [**1. conda 업데이트**](#--1-conda-------)
     + [**2. 가상환경 생성 후 그 안에 패키지 설치**](#--2------------------------)
   * [📌 코드 Framework](#------framework)
